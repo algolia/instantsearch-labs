@@ -2,9 +2,9 @@
 
 Welcome to our InstantSearch Labs repository!
 
-You’ll find in this place experimental features, widgets or UI that aren’t yet ready to be fully integrated into our InstantSearch libraries. 
+You’ll find in this place experimental features, widgets or UI that you can use on your websites. Those features usually are relying on advanced InstantSearch concepts, they might be integrated into the library more tightly afterwards.
 
-<Legal disclaimer>
+{Legal disclaimer placeholder}
 
 ## How To Contribute
 
