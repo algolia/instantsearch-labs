@@ -24,6 +24,10 @@ To help you get started we provide templates that runs in codesandbox and that y
 - [Angular InstantSearch](https://codesandbox.io/s/github/algolia/instantsearch-templates/tree/master/src/Angular%20InstantSearch) (TODO)
 - [Vue InstantSearch](https://codesandbox.io/s/github/algolia/instantsearch-templates/tree/master/src/Vue%20InstantSearch) (TODO)
 
+Once you opened the template on codesandbox, you can easily download it and start hacking!
+
+![codesandbox-download](codesandbox-dl.png)
+
 Source: [InstantSearch Templates](https://github.com/algolia/instantsearch-templates/)
 
 ## Readme
