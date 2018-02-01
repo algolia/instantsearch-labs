@@ -1,0 +1,22 @@
+{
+  "name": "instantsearchjs-template",
+  "version": "1.0.0",
+  "description": "Example template for Algolia InstantSearch.js",
+  "keywords": [
+    "algolia",
+    "search",
+    "template",
+    "example",
+    "fiddle",
+    "InstantSearch",
+    "InstantSearch.js",
+    "instantsearch"
+  ],
+  "private": true,
+  "devDependencies": {
+    "react-scripts": "1.1.0"
+  },
+  "scripts": {
+    "start": "react-scripts start"
+  }
+}
