@@ -1,6 +1,6 @@
 # How to Contribute
 
-##Convention 
+## Convention 
 
 This repository respect a structure following this particular convention:
 
@@ -30,19 +30,26 @@ Source: [InstantSearch Templates](https://github.com/algolia/instantsearch-templ
 
 Every experimentation should have a README following this structure: 
 
+- [Description](#description)
+- [Running the experimentation locally](#running-the-experimentation-locally)
+- [Tutorial](#tutorial)
+- [Known limitations](#known-limitations)
+
 ### Description
 
-Explain here what your experimentation is doing and its purposes. 
+Explain here what your experimentation is doing and its purposes.
+
+#### Codesandbox
 
 If feasible add a codesandbox link that will allow anyone to play directly with it.  
 
-Format of codesandbox link:
+**Link Format**
 
 `https://codesandbox.io/s/github/algolia/instantsearch-labs/tree/master/experimentation-name/instantsearch-flavor`
 
 ### Running the experimentation locally
 
-Add here instruction about how to run locally the experimentation. It should be as simple as:
+Add here instructions about how to run locally the experimentation. It should be as simple as:
 
 ```
 yarn
@@ -53,7 +60,7 @@ yarn start
 
 Describe the required steps to reproduce the experimentation on another InstantSearch project. 
 
-If there's any mandatory indices configuration, do not forget to mention them.
+If there's any required indices configuration, do not forget to mention them.
 
 ### Known limitations  
 
