@@ -1,6 +1,6 @@
 # How to Contribute
 
-##Convention 
+## Convention 
 
 This repository respect a structure following this particular convention:
 
