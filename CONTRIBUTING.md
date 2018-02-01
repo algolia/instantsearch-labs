@@ -38,7 +38,7 @@ Explain here what your experimentation is doing and its purposes.
 
 If feasible add a codesandbox link that will allow anyone to play directly with it.  
 
-Format
+**Link Format**
 
 `https://codesandbox.io/s/github/algolia/instantsearch-labs/tree/master/experimentation-name/instantsearch-flavor`
 
