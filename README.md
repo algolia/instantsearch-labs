@@ -4,7 +4,7 @@ Welcome to our InstantSearch Labs repository!
 
 You’ll find in this place experimental features, widgets or UI that aren’t yet ready to be fully integrated into our InstantSearch libraries. 
 
-<Legal disclaimer>
+{Legal disclaimer placeholder}
 
 ## How To Contribute
 
