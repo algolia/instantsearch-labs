@@ -8,7 +8,7 @@ You’ll find in this place experimental features, widgets or UI that you can us
 
 ## How To Contribute
 
-We welcome all contributors, from casual to regular. If you made an awesome experimentations using our InstantSearch librairies, [read our CONTRIBUTING guide](CONTRIBUTING.md) to know how to add it here.
+We welcome all contributors, from casual to regular. If you made an awesome experiment using any of our InstantSearch librairies, [read our CONTRIBUTING guide](CONTRIBUTING.md) to know how to add it here.
 
 ## InstantSearch projects
 
