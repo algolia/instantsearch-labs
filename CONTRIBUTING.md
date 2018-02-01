@@ -30,6 +30,11 @@ Source: [InstantSearch Templates](https://github.com/algolia/instantsearch-templ
 
 Every experimentation should have a README following this structure: 
 
+- [Description](#description)
+- [Running the experimentation locally](#running-the-experimentation-locally)
+- [Tutorial](#tutorial)
+- [Known limitations](#known-limitations)
+
 ### Description
 
 Explain here what your experimentation is doing and its purposes.
