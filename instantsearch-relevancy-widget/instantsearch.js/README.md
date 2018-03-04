@@ -1,4 +1,4 @@
-# Example
+# Relevancy Debugging Widget
 
 ## Description
 
