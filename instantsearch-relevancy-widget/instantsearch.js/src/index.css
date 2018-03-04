@@ -1,0 +1,62 @@
+body {
+  font-family: helvetica, arial, sans-serif;
+}
+
+em {
+  background: cyan;
+  font-style: normal;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.twoColumns {
+  display: grid;
+  grid-template-columns: 20% 75%;
+  grid-gap: 5%;
+}
+.ais-hits {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-gap: 5%;
+}
+.ais-hits--item {
+  background: #efefef;
+  margin-bottom: 0.5em;
+  padding: 1em;
+  min-height: 100px;
+  position: relative;
+}
+#searchBox {
+  margin-bottom: 2em;
+}
+#pagination {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hit-ranking-info ul {
+  height: 0;
+  opacity: 0;
+  position: absolute;
+  list-style: none;
+  color: #fff;
+  background: #383838;
+  padding: 8px;
+  border-radius: 3px;
+  margin: 0;
+  letter-spacing: 0.05em;
+  z-index: 2;
+}
+
+.hit-ranking-info span {
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.hit-ranking-info span:hover + ul {
+  height: auto;
+  opacity: 1;
+}
