@@ -8,7 +8,7 @@ This is an example of a custom widget build for InstantSearch.js. In order to ga
 
 ## Running the experimentation locally
 
-```
+```sh
 yarn
 yarn start
 ```
@@ -21,7 +21,7 @@ For deeper dive into creating custom widgets for InstantSearch, you can check ou
 
 First step is to create the custom widget. This can be done by extending the instantsearch.widgets namespace, like regular widgets.
 
-```
+```js
 instantsearch.widgets.customRankingInfo = function customRankingInfo({
 
   // code for widget will go here
@@ -37,7 +37,7 @@ Next let's take a look at which stages of the [widget lifecycle](https://communi
 
 To ensure that each hit is returned with the `_rankingInfo` attribute, we'll add it as a search parameter in the `getConfiguration` method.
 
-```
+```js
 getConfiguration() {
   return {
     getRankingInfo: true
@@ -49,7 +49,7 @@ getConfiguration() {
 
 This part will be run each time results are returned from Algolia.
 
-```
+```js
 render({ results }) {
   // select all the result hits on the page
   const searchHits = container.querySelectorAll('.ais-hits--item');
@@ -87,7 +87,7 @@ render({ results }) {
 
 The final JavaScript step is actually adding the widget to the DOM. Since our widget needs to target the hits, we'll be sure to add it directly _after_ the `hits` widget.
 
-```
+```js
 search.addWidget(
   instantsearch.widgets.customRankingInfo({
     container: '#products'
@@ -101,7 +101,7 @@ To keep simplify things, we can show and hide the widget using CSS. By default t
 
 Here is the relevant CSS to the widget.
 
-```
+```css
 .hit-ranking-info ul {
   height: 0;
   opacity: 0;
