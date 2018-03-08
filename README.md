@@ -12,16 +12,9 @@ We welcome all contributors, from casual to regular. If you made an awesome expe
 
 ## InstantSearch projects
 
-* [InstantSearch.js](instantsearch.js-github)
-* [React InstantSearch](instantsearch-react-github) 
-* [Vue InstantSearch](instantsearch-vue-github) 
-* [Angular InstantSearch](instantsearch-angular-github) 
-* [InstantSearch Android](instantsearch-android-github) 
-* [InstantSearch iOS](instantsearch-ios-github) 
-
-[instantsearch.js-github]: https://github.com/algolia/instantsearch.js
-[instantsearch-android-github]: https://github.com/algolia/instantsearch-android
-[instantsearch-ios-github]: https://github.com/algolia/instantsearch-ios
-[instantsearch-react-github]: https://github.com/algolia/react-instantsearch
-[instantsearch-angular-github]: https://github.com/algolia/angular-instantsearch
-[instantsearch-vue-github]: https://github.com/algolia/vue-instantsearch
+* [InstantSearch.js](https://github.com/algolia/instantsearch.js)
+* [React InstantSearch](https://github.com/algolia/react-instantsearch) 
+* [Vue InstantSearch](https://github.com/algolia/vue-instantsearch) 
+* [Angular InstantSearch](https://github.com/algolia/angular-instantsearch) 
+* [InstantSearch Android](https://github.com/algolia/instantsearch-android) 
+* [InstantSearch iOS](https://github.com/algolia/instantsearch-ios) 
