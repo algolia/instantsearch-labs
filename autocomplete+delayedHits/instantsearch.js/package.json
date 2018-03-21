@@ -21,6 +21,6 @@
     "algoliasearch": "^3.24.5"
   },
   "scripts": {
-    "start": "browser-sync start --server . --files 'src/*.css,src/*.js,public/*.html' --no-open"
+    "start": "browser-sync start --server --index 'public/index.html' --files 'public/*.css,src/*.js,public/*.html' --no-open"
   }
 }
