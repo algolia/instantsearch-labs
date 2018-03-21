@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Query Suggestions with Delayed Hits Demo</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <!-- IE < 10 support -->
+  <!--[if lte IE 9]>
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.2.0/dist/instantsearch.min.css">
+  <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+<body>
+
+  <!-- INTERFACE -->
+  <header>
+    <a href="."><img id ="bestshack" style="height:50px" src="./img/bestshack.png"/></a>
+    <div id="aa-input-container"></div>
+    <!-- <div id="search-input-icon"></div> -->
+  </header>
+
+  <main>
+    <div id="left-column">
+      <div id="hierarchical-categories" class="facet"></div>
+      <div id="brand" class="facet"></div>
+      <div id="stars" class="facet"></div>
+      <div id="price" class="facet"></div>
+      <div id="price-range" class="facet"></div>
+      <div id="type" class="facet"></div>
+      <div id="popularity-selector" class="facet"></div>
+      <div id="free-shipping" class="facet"></div>
+    </div>
+    <div id="right-column">
+      <!-- <div id="free_promotional_banner" style="text-align: center;"></div> -->
+      <div id="sort-by-wrapper"><span id="sort-by"></span></div>
+      <div id="stats"></div>
+      <div id="active-filters"></div>
+      <div id="hits"></div>
+      <div id="pagination"></div>
+    </div>
+  </main>
+
+    <!-- <div class="demo_settings">
+      <div id="demo-header">
+        <div class="algolia-logo"></div>
+        <div class="demo_title"><b>Demo Settings</b></div>
+      </div>
+      <div class="demo_select">
+        <span>Time delay:</span>
+        <select id="timeSelect">
+                <option value="100" >0.1 sec</option>
+                <option value="200" >0.2 sec</option>
+                <option value="300" >0.3 sec</option>
+                <option value="400" >0.4 sec</option>
+                <option value="500" selected>0.5 sec</option>
+                <option value="600" >0.6 sec</option>
+                <option value="700" >0.7 sec</option>
+                <option value="800" >0.8 sec</option>
+                <option value="900" >0.9 sec</option>
+                <option value="1000">1.0 sec</option>
+                <option value="1500">1.5 sec</option>
+                <option value="2000">2.0 sec</option>
+              </select>
+      </div>
+      <div class="demo_select">
+        <span>or enter a time delay:</span>
+        <input type="text" id="time-input"><span>sec</span>
+        <button id="time-input-button">Apply</button>
+      </div>
+      <div class="demo_select">
+        <span>Suggestions:</span>
+        <select id="nbSuggestionsSelect">
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5" selected>5</option>
+              <option value="10">10</option> 
+            </select>
+      </div>
+    </div> -->
+
+
+  <footer>
+    Source Code on <a href="https://github.com/algolia/examples/blob/master/instant-search/instantsearch.js">Github</a> -
+    Powered by <a href="https://www.algolia.com">Algolia</a> - Data from <a href="https://developer.bestbuy.com">Best Buy</a>
+  </footer>
+  <!-- /INTERFACE -->
+
+  <!-- TEMPLATES -->
+  <script type="text/html" id="hit-template">
+    <div class="hit">
+      <div class="hit-image">
+        <img src="{{image}}" alt="{{name}}">
+      </div>
+      <div class="hit-content">
+        <h3 class="hit-price">${{price}}</h3>
+        <h2 class="hit-name">{{{_highlightResult.name.value}}}</h2>
+        <p class="hit-category-breadcrumb">{{{categories}}}</p>
+        <p class="hit-stars">{{{starsLayout}}} ({{popularity}})</p>
+        <p class="hit-description">{{{_highlightResult.description.value}}}</p>
+      </div>
+    </div>
+  </script>
+
+  <script type="text/html" id="no-results-template">
+      <p>We didn't find any results for the search <em>"{{query}}"</em>.</p>
+      <a href="." class='clear-all'>Clear search</a>
+    </div>
+  </script>
+  <!-- /TEMPLATES -->
+
+  <!-- SCRIPTS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/underscorejs/1.8.3/underscore-min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.2.0/dist/instantsearch.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/algoliasearch@3/dist/algoliasearchLite.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
+  <script src="../src/autocomplete-widget.js"></script>
+  <script src="../src/index.js"></script>
+  <!-- /SCRIPTS -->
+
+</body>
+
+</html>
