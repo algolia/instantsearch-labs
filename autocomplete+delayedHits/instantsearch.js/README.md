@@ -1,4 +1,4 @@
-# Example
+# Custom autocomplete + delayed IS hits widget
 
 ## Description
 
