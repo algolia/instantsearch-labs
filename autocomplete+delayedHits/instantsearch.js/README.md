@@ -11,7 +11,7 @@ Requested by a client because delaying the instant search results limits visual 
 ### How
 A custom instant search widget that integrates autocomplete.js with a query suggestions index as the source.
 
-* [See it live on Codesandobox](https://codesandbox.io/s/x7v977n2mz)
+* [See it live on Codesandbox](https://codesandbox.io/s/x7v977n2mz)
 * [See it live on the demo-server](https://internal-preview.algolia.com/delayed-hits-demo)
 
 ## Running the experimentation locally
