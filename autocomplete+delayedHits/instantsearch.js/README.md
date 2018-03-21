@@ -8,11 +8,11 @@ An experimental UX which combines autocomplete and instant search, but delays th
 ### Why
 Requested by a client because delaying the instant search results limits visual noise and allows users to better understand what is going on
 
-## How
+### How
 A custom instant search widget that integrates autocomplete.js with a query suggestions index as the source.
 
-[See it live on Codesandobox](https://codesandbox.io/s/x7v977n2mz)
-[See it live on the demo-server](https://internal-preview.algolia.com/delayed-hits-demo)
+* [See it live on Codesandobox](https://codesandbox.io/s/x7v977n2mz)
+* [See it live on the demo-server](https://internal-preview.algolia.com/delayed-hits-demo)
 
 ## Running the experimentation locally
 
@@ -30,8 +30,8 @@ yarn start
 ### Step2
 * Add the custom widget to the instant search instance
 
-## Step 3
-* Profit!
+### Step 3
+* Profit! 💵💵💵
 
 ## Known limitations
 None
