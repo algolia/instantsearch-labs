@@ -1,12 +1,42 @@
-# Relevancy Debugging Widget
+# `relevancyWidget()`
+
+![demo of relevancyWidget](demo.gif)
 
 ## Description
 
-This is an example of a custom widget build for InstantSearch.js. In order to gain an understanding on why a hit is being ranking the way it is, Algolia provides a couple of ways to [troubleshoot relevance](https://www.algolia.com/doc/tutorials/full-text-search/relevance/how-to-troubleshoot-relevance). It is possible to display the ranking info via the dashboard and also through the API. This widget aims to create a third way to reason about result rankings: with a custom widget inserted directly on the search UI. This could be useful on a staging site, to quickly understand the ranking info without changing context.
+This is the `relevancyWidget()` labs widget for [InstantSearch.js](https://community.algolia.com/instantsearch.js/). You can use this widget to gain an understanding on why a hit is being ranked the way it is.
 
-[See it live on Codesandobox](https://codesandbox.io/s/vq8kmjn8m5)
+This widget displays the same kind of 🏆 ranking information the [Algolia dashboard presents](https://www.algolia.com/doc/tutorials/full-text-search/relevance/how-to-troubleshoot-relevance) but directly into your search UI to help you debug the ranking of results.
+
+This widget aims to create a third way to reason about result rankings: with a custom widget inserted directly on the search UI. This could be useful on a staging site, to quickly understand the ranking info without changing context.
+
+[See it live on CodeSandbox](https://codesandbox.io/s/vq8kmjn8m5) TODO => this codesandbox should be the first example.
+
+TODO: table of contents
+
+## Get the code
+
+### JavaScript
+
+### CSS
+
+## API
+
+## Requirements
+
+## Examples
+
+### Using the `hits()` widget
+
+### Without using the `hits()` widget
+
+### Implementation details
+
+### Contributing
 
 ## Running the experimentation locally
+
+### OLD README
 
 ```sh
 yarn
