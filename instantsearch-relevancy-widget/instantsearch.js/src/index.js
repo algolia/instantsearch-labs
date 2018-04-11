@@ -13,7 +13,11 @@ const search = instantsearch({
 
 // Extending the instantsearch.widgets namespace, like regular widgets
 instantsearch.widgets.customRankingInfo = function customRankingInfo({
-  container
+  container,
+  hitSelector='.ais-hits--item',
+  cssClasses={
+    root: 'ais-relevancyWidget'
+  }
 }) {
   // container should be a CSS selector, so we convert it into a DOM element
   container = document.querySelector(container);
@@ -27,11 +31,11 @@ instantsearch.widgets.customRankingInfo = function customRankingInfo({
     },
     // Called whenever we receive new results from Algolia
     render({ results }) {
-      let searchHits = container.querySelectorAll('.ais-hits--item');
+      let searchHits = container.querySelectorAll(hitSelector);
       // check to see if ranking info container already exists in the hit & remove it to avoid duplicates
       searchHits.forEach((hit, i) => {
-        if (hit.querySelector('.hit-ranking-info')) {
-          hit.querySelector('.hit-ranking-info').remove();
+        if (hit.querySelector(`.${cssClasses.root}`)) {
+          hit.querySelector(`.${cssClasses.root}`).remove();
         }
         // add an id to each hit so we can target them later
         hit.id = `hit-${i}`;
@@ -40,7 +44,7 @@ instantsearch.widgets.customRankingInfo = function customRankingInfo({
       // create html that will contain ranking info
       results.hits.forEach((hit, i) => {
         const resultsContainer = document.createElement('div');
-        resultsContainer.className = 'hit-ranking-info';
+        resultsContainer.className = cssClasses.root;
         const trophy = document.createElement('span');
         trophy.innerText = '🏆';
         resultsContainer.appendChild(trophy);
