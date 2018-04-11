@@ -21,11 +21,7 @@ search.addWidget(
   })
 );
 
-search.addWidget(
-  relevancyWidget({
-    container: '#products',
-  })
-);
+search.addWidget(relevancyWidget());
 
 search.addWidget(
   instantsearch.widgets.searchBox({

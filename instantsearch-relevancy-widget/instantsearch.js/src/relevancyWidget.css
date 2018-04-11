@@ -1,10 +1,9 @@
-.ais-hits--item {
+.ais-relevancyWidget {
   position: relative;
 }
 
 .ais-relevancyWidget ul {
-  height: 0;
-  opacity: 0;
+  display:none;
   position: absolute;
   list-style: none;
   color: #fff;
@@ -14,6 +13,8 @@
   margin: 0;
   letter-spacing: 0.05em;
   z-index: 2;
+  top: 16px;
+  left: 0;
 }
 
 .ais-relevancyWidget span {
@@ -21,7 +22,6 @@
   font-size: 16px;
 }
 
-.ais-relevancyWidget span:hover + ul {
-  height: auto;
-  opacity: 1;
+.ais-relevancyWidget span:hover + ul, .ais-relevancyWidget ul:hover {
+  display: block;
 }
