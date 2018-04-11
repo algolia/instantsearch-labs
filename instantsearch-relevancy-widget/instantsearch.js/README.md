@@ -60,7 +60,14 @@ search.addWiget(relevancyWidget());
 
 ### Requirements
 
-The default usage requires that you use the default `hits()` widget. If you want to use the relevancy widget when not using the `hits()` widget but maybe `connectHits()` or any other way of disaplying hits then read the [API documentation](#api) or the [advanced example](#without-using-the-hits-widget).
+The default usage requires that you use the default `hits()` widget. If you want to use the relevancy widget when not using the `hits()` widget but maybe `connectHits()` or any other way of disaplying hits then read the [API documentation](#api) or the [connectHits() example](#examples).
+
+The order of the hits in the DOM must be the same as the one received from the results. This could be improved in the future to support situations where it's not the case, [contribute](#contributing) if that's your case.
+
+## Examples
+
+- using the `hits()` widget: [TODO CodeSandbox](TODO)
+- using the `connectHits()` connector: [TODO CodeSandbox](TODO)
 
 ## API
 
@@ -68,10 +75,11 @@ The default usage requires that you use the default `hits()` widget. If you want
 
 Returns a relevancy widget to be added to an InstantSearch.js instance.
 
-## Examples
+**`opts.hitsSelector: string, default: '.ais-hits--item'`**
+This option can be used to precisely control the CSS selector responsible for identifying the containers for your hits.
 
-- using the `hits()` widget: [TODO CodeSandbox](TODO)
-- using the `connectHits()` connector: [TODO CodeSandbox](TODO)
+**`opts.cssClasses: object, default: {root: 'ais-relevancyWidget'}`**
+This option can be used to change the CSS classes used by the widget.
 
 ## Implementation details
 
