@@ -14,24 +14,18 @@ This widget aims to create a third way to reason about result rankings: with a c
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+**Table of Contents**
 
-  - [Get the code](#get-the-code)
-    - [JavaScript](#javascript)
-    - [CSS](#css)
-  - [API](#api)
+- [Get the code](#get-the-code)
+  - [JavaScript](#javascript)
+  - [CSS](#css)
+- [Usage](#usage)
   - [Requirements](#requirements)
-  - [Examples](#examples)
-    - [Using the `hits()` widget](#using-the-hits-widget)
-    - [Without using the `hits()` widget](#without-using-the-hits-widget)
-  - [Implementation details](#implementation-details)
-  - [Contributing](#contributing)
-- [OLD README](#old-readme)
-  - [Tutorial](#tutorial)
-    - [Create Custom Widget](#create-custom-widget)
-    - [Step2](#step2)
-    - [Add the Widget to the DOM](#add-the-widget-to-the-dom)
-    - [Add Some Light Styling](#add-some-light-styling)
+- [API](#api)
+  - [relevancyWidget(opts)](#relevancywidgetopts)
+- [Examples](#examples)
+- [Implementation details](#implementation-details)
+- [Contributing](#contributing)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
