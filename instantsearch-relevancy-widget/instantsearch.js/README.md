@@ -2,6 +2,8 @@
 
 ![demo of relevancyWidget](demo.gif)
 
+TODO change the GIF to a smaller one
+
 ## Description
 
 This is the `relevancyWidget()` labs widget for [InstantSearch.js](https://community.algolia.com/instantsearch.js/). You can use this widget to gain an understanding on why a hit is being ranked the way it is.
@@ -30,13 +32,11 @@ TODO: table of contents
 
 ### Without using the `hits()` widget
 
-### Implementation details
+## Implementation details
 
-### Contributing
+## Contributing
 
-## Running the experimentation locally
-
-### OLD README
+# OLD README
 
 ```sh
 yarn
