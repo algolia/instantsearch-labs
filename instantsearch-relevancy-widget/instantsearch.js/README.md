@@ -2,8 +2,6 @@
 
 ![demo of relevancyWidget](demo.gif)
 
-TODO change the GIF to a smaller one
-
 ## Description
 
 This is the `relevancyWidget()` labs widget for [InstantSearch.js](https://community.algolia.com/instantsearch.js/). You can use this widget to gain an understanding on why a hit is being ranked the way it is.
@@ -12,149 +10,82 @@ This widget displays the same kind of 🏆 ranking information the [Algolia dash
 
 This widget aims to create a third way to reason about result rankings: with a custom widget inserted directly on the search UI. This could be useful on a staging site, to quickly understand the ranking info without changing context.
 
-[See it live on CodeSandbox](https://codesandbox.io/s/vq8kmjn8m5) TODO => this codesandbox should be the first example.
+[See it live on CodeSandbox](https://codesandbox.io/s/vq8kmjn8m5).
 
-TODO: table of contents
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+  - [Get the code](#get-the-code)
+    - [JavaScript](#javascript)
+    - [CSS](#css)
+  - [API](#api)
+  - [Requirements](#requirements)
+  - [Examples](#examples)
+    - [Using the `hits()` widget](#using-the-hits-widget)
+    - [Without using the `hits()` widget](#without-using-the-hits-widget)
+  - [Implementation details](#implementation-details)
+  - [Contributing](#contributing)
+- [OLD README](#old-readme)
+  - [Tutorial](#tutorial)
+    - [Create Custom Widget](#create-custom-widget)
+    - [Step2](#step2)
+    - [Add the Widget to the DOM](#add-the-widget-to-the-dom)
+    - [Add Some Light Styling](#add-some-light-styling)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Get the code
 
+This widget comes with JavaScript but also pre-defined CSS.
+
 ### JavaScript
+
+You can copy paste the JavaScript code from the repository itself, grab it in [src/relevancyWidget.js](src/relevancyWidget.js).
 
 ### CSS
 
+You can copy paste the necessary CSS code from the repository itself, grab it in [src/relevancyWidget.css](src/relevancyWidget.css).
+
+## Usage
+
+The simplest usage is:
+
+```js
+const search = instantsearch({
+  appId: '...',
+  apiKey: '...',
+  indexName: '...'
+});
+
+search.addWiget(instantsearch.widgets.hits({container: '#hits'}));
+search.addWiget(relevancyWidget());
+```
+
+### Requirements
+
+The default usage requires that you use the default `hits()` widget. If you want to use the relevancy widget when not using the `hits()` widget but maybe `connectHits()` or any other way of disaplying hits then read the [API documentation](#api) or the [advanced example](#without-using-the-hits-widget).
+
 ## API
 
-## Requirements
+### relevancyWidget(opts)
+
+Returns a relevancy widget to be added to an InstantSearch.js instance.
 
 ## Examples
 
-### Using the `hits()` widget
-
-### Without using the `hits()` widget
+- using the `hits()` widget: [TODO CodeSandbox](TODO)
+- using the `connectHits()` connector: [TODO CodeSandbox](TODO)
 
 ## Implementation details
 
+This widget is implemented using a [custom widget](https://community.algolia.com/instantsearch.js/v2/guides/custom-widget.html), it uses the `getConfiguration` part of the widget lifecycle to configure the [`getRankingInfo` search parameter](https://www.algolia.com/doc/api-reference/api-parameters/getRankingInfo/) from the Algolia API. Setting this parameter to `true` is necessary to get the actual ranking information of hits.
+
 ## Contributing
 
-# OLD README
+To contribute to the project, clone this repository then run:
 
 ```sh
 yarn
 yarn start
 ```
-
-## Tutorial
-
-For deeper dive into creating custom widgets for InstantSearch, you can check out the [guide](https://community.algolia.com/instantsearch.js/v2/guides/custom-widget.html). I’ll be going over the steps I used to create this relevancy widget.
-
-### Create Custom Widget
-
-First step is to create the custom widget. This can be done by extending the instantsearch.widgets namespace, like regular widgets.
-
-```js
-instantsearch.widgets.customRankingInfo = function customRankingInfo({
-
-  // code for widget will go here
-
-});
-```
-
-### Step2
-
-Next let's take a look at which stages of the [widget lifecycle](https://community.algolia.com/instantsearch.js/v2/guides/custom-widget.html#the-widget-lifecycle-and-api) will apply in this case.
-
-* `getConfiguration`
-
-To ensure that each hit is returned with the `_rankingInfo` attribute, we'll add it as a search parameter in the `getConfiguration` method.
-
-```js
-getConfiguration() {
-  return {
-    getRankingInfo: true
-  };
-}
-```
-
-* `render`
-
-This part will be run each time results are returned from Algolia.
-
-```js
-render({ results }) {
-  // select all the result hits on the page
-  const searchHits = container.querySelectorAll('.ais-hits--item');
-  // check to see if ranking info container already exists in the hit & remove it to avoid duplicates
-  searchHits.forEach((hit, i) => {
-    if (hit.querySelector('.hit-ranking-info')) {
-      hit.querySelector('.hit-ranking-info').remove();
-    }
-    // add an id to each result hit so we can target them later
-    hit.id = `hit-${i}`;
-  });
-
-  // iterrate over each hit to create html that will contain ranking info
-  results.hits.forEach((hit, i) => {
-    const resultsContainer = document.createElement('div');
-    resultsContainer.className = 'hit-ranking-info';
-    const trophy = document.createElement('span');
-    trophy.innerText = '🏆';
-    resultsContainer.appendChild(trophy);
-    let resultsUl = document.createElement('ul');
-    const rankingHtml = Object.entries(hit._rankingInfo).map(
-      ([key, val]) => {
-        return `<li><span>${key}: </span> <span>${val}</span></li>`;
-      }
-    );
-    resultsUl.innerHTML = rankingHtml.join('');
-    resultsContainer.appendChild(resultsUl);
-    // append ranking results to hit
-    container.querySelector(`#hit-${i}`).appendChild(resultsContainer);
-  });
-}
-```
-
-### Add the Widget to the DOM
-
-The final JavaScript step is actually adding the widget to the DOM. Since our widget needs to target the hits, we'll be sure to add it directly _after_ the `hits` widget.
-
-```js
-search.addWidget(
-  instantsearch.widgets.customRankingInfo({
-    container: '#products'
-  })
-);
-```
-
-### Add Some Light Styling
-
-To keep simplify things, we can show and hide the widget using CSS. By default the ranking info will be set to `opacity: 0`, and when the trophy icon is hovered, we'll display it by setting the opacity to 1.
-
-Here is the relevant CSS to the widget.
-
-```css
-.hit-ranking-info ul {
-  height: 0;
-  opacity: 0;
-  position: absolute;
-  list-style: none;
-  color: #fff;
-  background: #383838;
-  padding: 8px;
-  border-radius: 3px;
-  margin: 0;
-  letter-spacing: 0.05em;
-  z-index: 2;
-}
-
-.hit-ranking-info span {
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.hit-ranking-info span:hover + ul {
-  height: auto;
-  opacity: 1;
-}
-```
-
-It's also important to remember that the hit element itself should be `position: relative`.
