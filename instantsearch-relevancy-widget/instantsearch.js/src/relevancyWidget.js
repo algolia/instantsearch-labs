@@ -1,3 +1,5 @@
+import './relevancyWidget.css';
+
 function relevancyWidget({ container, hitSelector, cssClasses }) {
   container,
     (hitSelector = '.ais-hits--item'),
