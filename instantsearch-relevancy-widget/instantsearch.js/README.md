@@ -1,6 +1,10 @@
 # `relevancyWidget()`
 
+## Demo
+
 ![demo of relevancyWidget](demo.gif)
+
+[See it live on CodeSandbox](https://codesandbox.io/s/vq8kmjn8m5).
 
 ## Description
 
@@ -9,8 +13,6 @@ This is the `relevancyWidget()` labs widget for [InstantSearch.js](https://commu
 This widget displays the same kind of 🏆 ranking information the [Algolia dashboard presents](https://www.algolia.com/doc/tutorials/full-text-search/relevance/how-to-troubleshoot-relevance) but directly into your search UI to help you debug the ranking of results.
 
 This widget aims to create a third way to reason about result rankings: with a custom widget inserted directly on the search UI. This could be useful on a staging site, to quickly understand the ranking info without changing context.
-
-[See it live on CodeSandbox](https://codesandbox.io/s/vq8kmjn8m5).
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
