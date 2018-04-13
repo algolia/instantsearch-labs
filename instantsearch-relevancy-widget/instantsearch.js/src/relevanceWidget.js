@@ -1,10 +1,10 @@
-import './relevancyWidget.css';
+import './relevanceWidget.css';
 
-function relevancyWidget({
+function relevanceWidget({
   hitsSelector = '.ais-hits--item',
   cssClasses = {
-    root: 'ais-relevancyWidget'
-  }
+    root: 'ais-relevanceWidget',
+  },
 } = {}) {
   return {
     // Method called at startup, to configure the Algolia settings
@@ -34,10 +34,11 @@ function relevancyWidget({
         $rankingInfo.innerHTML = rankingHtml.join('');
         $mainContainer.appendChild($rankingInfo);
         // append ranking results to hit
+        console.log(searchHits[hitIndex]);
         searchHits[hitIndex].appendChild($mainContainer);
       });
     },
   };
 }
 
-export default relevancyWidget;
+export default relevanceWidget;

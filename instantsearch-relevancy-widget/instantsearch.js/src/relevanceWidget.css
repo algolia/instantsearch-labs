@@ -1,9 +1,9 @@
-.ais-relevancyWidget {
+.ais-relevanceWidget {
   position: relative;
 }
 
-.ais-relevancyWidget ul {
-  display:none;
+.ais-relevanceWidget ul {
+  display: none;
   position: absolute;
   list-style: none;
   color: #fff;
@@ -17,11 +17,12 @@
   left: 0;
 }
 
-.ais-relevancyWidget span {
+.ais-relevanceWidget span {
   cursor: pointer;
   font-size: 16px;
 }
 
-.ais-relevancyWidget span:hover + ul, .ais-relevancyWidget ul:hover {
+.ais-relevanceWidget span:hover + ul,
+.ais-relevanceWidget ul:hover {
   display: block;
 }

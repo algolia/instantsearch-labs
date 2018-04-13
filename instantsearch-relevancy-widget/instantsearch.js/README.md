@@ -15,19 +15,21 @@ This widget displays the same kind of 🏆 ranking information the [Algolia dash
 This widget aims to create a third way to reason about result rankings: with a custom widget inserted directly on the search UI. This could be useful on a staging site, to quickly understand the ranking info without changing context.
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
+
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
 **Table of Contents**
 
-- [Get the code](#get-the-code)
-  - [JavaScript](#javascript)
-  - [CSS](#css)
-- [Usage](#usage)
-  - [Requirements](#requirements)
-- [API](#api)
-  - [relevancyWidget(opts)](#relevancywidgetopts)
-- [Examples](#examples)
-- [Implementation details](#implementation-details)
-- [Contributing](#contributing)
+* [Get the code](#get-the-code)
+  * [JavaScript](#javascript)
+  * [CSS](#css)
+* [Usage](#usage)
+  * [Requirements](#requirements)
+* [API](#api)
+  * [relevancyWidget(opts)](#relevancywidgetopts)
+* [Examples](#examples)
+* [Implementation details](#implementation-details)
+* [Contributing](#contributing)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -37,11 +39,11 @@ This widget comes with JavaScript but also pre-defined CSS.
 
 ### JavaScript
 
-You can copy paste the JavaScript code from the repository itself, grab it in [src/relevancyWidget.js](src/relevancyWidget.js).
+You can copy and paste the JavaScript code from the repository itself, grab it in [src/relevancyWidget.js](src/relevancyWidget.js).
 
 ### CSS
 
-You can copy paste the necessary CSS code from the repository itself, grab it in [src/relevancyWidget.css](src/relevancyWidget.css).
+You can copy and paste the necessary CSS code from the repository itself, grab it in [src/relevancyWidget.css](src/relevancyWidget.css).
 
 ## Usage
 
@@ -51,23 +53,23 @@ The simplest usage is:
 const search = instantsearch({
   appId: '...',
   apiKey: '...',
-  indexName: '...'
+  indexName: '...',
 });
 
-search.addWiget(instantsearch.widgets.hits({container: '#hits'}));
+search.addWiget(instantsearch.widgets.hits({ container: '#hits' }));
 search.addWiget(relevancyWidget());
 ```
 
 ### Requirements
 
-The default usage requires that you use the default `hits()` widget. If you want to use the relevancy widget when not using the `hits()` widget but maybe `connectHits()` or any other way of disaplying hits then read the [API documentation](#api) or the [connectHits() example](#examples).
+The default usage requires that you use the default `hits()` widget. If you want to use the relevancy widget when not using the `hits()` widget but maybe `connectHits()` or any other way of disapalying hits then read the [API documentation](#api) or the [connectHits() example](#examples).
 
 The order of the hits in the DOM must be the same as the one received from the results. This could be improved in the future to support situations where it's not the case, [contribute](#contributing) if that's your case.
 
 ## Examples
 
-- using the `hits()` widget: [TODO CodeSandbox](TODO)
-- using the `connectHits()` connector: [TODO CodeSandbox](TODO)
+* using the `hits()` widget: [CodeSandbox](https://codesandbox.io/s/j4lk89v633)
+* using the `connectHits()` connector: [TODO CodeSandbox](TODO)
 
 ## API
 

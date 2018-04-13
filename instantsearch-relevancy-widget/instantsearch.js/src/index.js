@@ -1,7 +1,7 @@
 /* global instantsearch */
 
 import './index.css';
-import relevancyWidget from './relevancyWidget';
+import relevanceWidget from './relevanceWidget';
 
 const search = instantsearch({
   appId: 'latency',
@@ -21,7 +21,7 @@ search.addWidget(
   })
 );
 
-search.addWidget(relevancyWidget());
+search.addWidget(relevanceWidget());
 
 search.addWidget(
   instantsearch.widgets.searchBox({
