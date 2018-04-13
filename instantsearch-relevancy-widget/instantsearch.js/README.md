@@ -62,14 +62,14 @@ search.addWiget(relevancyWidget());
 
 ### Requirements
 
-The default usage requires that you use the default `hits()` widget. If you want to use the relevancy widget when not using the `hits()` widget but maybe `connectHits()` or any other way of disapalying hits then read the [API documentation](#api) or the [connectHits() example](#examples).
+The default usage requires that you use the default `hits()` widget. If you want to use the relevancy widget when not using the `hits()` widget but maybe `connectHits()` or any other way of disaplaying hits then read the [API documentation](#api) or the [connectHits() example](#examples).
 
 The order of the hits in the DOM must be the same as the one received from the results. This could be improved in the future to support situations where it's not the case, [contribute](#contributing) if that's your case.
 
 ## Examples
 
 * using the `hits()` widget: [CodeSandbox](https://codesandbox.io/s/j4lk89v633)
-* using the `connectHits()` connector: [TODO CodeSandbox](TODO)
+* using the `connectHits()` connector: [CodeSandbox](https://codesandbox.io/s/v8r9y1q4p5)
 
 ## API
 
