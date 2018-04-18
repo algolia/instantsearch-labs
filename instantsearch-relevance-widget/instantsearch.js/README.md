@@ -1,14 +1,14 @@
-# `relevancyWidget()`
+# `relevanceWidget()`
 
 ## Demo
 
-![demo of relevancyWidget](demo.gif)
+![demo of relevanceWidget](demo.gif)
 
 [See it live on CodeSandbox](https://codesandbox.io/s/vq8kmjn8m5).
 
 ## Description
 
-This is the `relevancyWidget()` labs widget for [InstantSearch.js](https://community.algolia.com/instantsearch.js/). You can use this widget to gain an understanding on why a hit is being ranked the way it is.
+This is the `relevanceWidget()` labs widget for [InstantSearch.js](https://community.algolia.com/instantsearch.js/). You can use this widget to gain an understanding on why a hit is being ranked the way it is.
 
 This widget displays the same kind of 🏆 ranking information the [Algolia dashboard presents](https://www.algolia.com/doc/tutorials/full-text-search/relevance/how-to-troubleshoot-relevance) but directly into your search UI to help you debug the ranking of results.
 
@@ -26,7 +26,7 @@ This widget aims to create a third way to reason about result rankings: with a c
 * [Usage](#usage)
   * [Requirements](#requirements)
 * [API](#api)
-  * [relevancyWidget(opts)](#relevancywidgetopts)
+  * [relevanceWidget(opts)](#relevancewidgetopts)
 * [Examples](#examples)
 * [Implementation details](#implementation-details)
 * [Contributing](#contributing)
@@ -39,11 +39,11 @@ This widget comes with JavaScript but also pre-defined CSS.
 
 ### JavaScript
 
-You can copy and paste the JavaScript code from the repository itself, grab it in [src/relevancyWidget.js](src/relevancyWidget.js).
+You can copy and paste the JavaScript code from the repository itself, grab it in [src/relevanceWidget.js](src/relevanceWidget.js).
 
 ### CSS
 
-You can copy and paste the necessary CSS code from the repository itself, grab it in [src/relevancyWidget.css](src/relevancyWidget.css).
+You can copy and paste the necessary CSS code from the repository itself, grab it in [src/relevanceWidget.css](src/relevanceWidget.css).
 
 ## Usage
 
@@ -57,12 +57,12 @@ const search = instantsearch({
 });
 
 search.addWiget(instantsearch.widgets.hits({ container: '#hits' }));
-search.addWiget(relevancyWidget());
+search.addWiget(relevanceWidget());
 ```
 
 ### Requirements
 
-The default usage requires that you use the default `hits()` widget. If you want to use the relevancy widget when not using the `hits()` widget but maybe `connectHits()` or any other way of displaying hits then read the [API documentation](#api) or the [connectHits() example](#examples).
+The default usage requires that you use the default `hits()` widget. If you want to use the relevance widget when not using the `hits()` widget but maybe `connectHits()` or any other way of displaying hits then read the [API documentation](#api) or the [connectHits() example](#examples).
 
 The order of the hits in the DOM must be the same as the one received from the results. This could be improved in the future to support situations where it's not the case, [contribute](#contributing) if that's your case.
 
@@ -73,14 +73,14 @@ The order of the hits in the DOM must be the same as the one received from the r
 
 ## API
 
-### relevancyWidget(opts)
+### relevanceWidget(opts)
 
-Returns a relevancy widget to be added to an InstantSearch.js instance.
+Returns a relevance widget to be added to an InstantSearch.js instance.
 
 **`opts.hitsSelector: string, default: '.ais-hits--item'`**
 This option can be used to precisely control the CSS selector responsible for identifying the containers for your hits.
 
-**`opts.cssClasses: object, default: {root: 'ais-relevancyWidget'}`**
+**`opts.cssClasses: object, default: {root: 'ais-relevanceWidget'}`**
 This option can be used to change the CSS classes used by the widget.
 
 ## Implementation details
