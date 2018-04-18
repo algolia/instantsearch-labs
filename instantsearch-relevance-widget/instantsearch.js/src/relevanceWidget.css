@@ -1,0 +1,28 @@
+.ais-relevanceWidget {
+  position: relative;
+}
+
+.ais-relevanceWidget ul {
+  display: none;
+  position: absolute;
+  list-style: none;
+  color: #fff;
+  background: #383838;
+  padding: 8px;
+  border-radius: 3px;
+  margin: 0;
+  letter-spacing: 0.05em;
+  z-index: 2;
+  top: 16px;
+  left: 0;
+}
+
+.ais-relevanceWidget span {
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.ais-relevanceWidget span:hover + ul,
+.ais-relevanceWidget ul:hover {
+  display: block;
+}
