@@ -4,7 +4,7 @@
 
 ![demo of relevanceWidget](demo.gif)
 
-[See it live on CodeSandbox](https://codesandbox.io/s/vq8kmjn8m5).
+[See it live on CodeSandbox](https://codesandbox.io/s/j4lk89v633).
 
 ## Description
 
