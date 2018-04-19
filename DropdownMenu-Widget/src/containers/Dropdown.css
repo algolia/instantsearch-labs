@@ -1,0 +1,67 @@
+/* Parent container for horizontal scrolling  */
+.dropdown-facet-container {
+  z-index: 999;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+/* Parent container for Dropdown Menu */
+.ais-DropdownMenu-container {
+  padding: 18px;
+  z-index: 998;
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+}
+
+.ais-DropdownMenu-List {
+  padding: 12px;
+  background: #fff;
+  position: absolute;
+  display: none;
+  margin-top: 12px;
+  margin-left: -6px;
+  border: 1px solid #999;
+  border-radius: 5%;
+}
+.ais-DropdownMenu-container:hover .ais-DropdownMenu-List {
+  display: inline-block;
+}
+.ais-DropdownMenu-title span {
+  color: gray;
+}
+.ais-DropdownMenu-item-label {
+  display: block;
+  cursor: pointer;
+}
+.ais-DropdownMenu-item-label-desc {
+  margin-left: 8px;
+}
+.ais-DropdownMenu-caret-down {
+  border: solid #999;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  margin-bottom: 3px;
+  margin-left: 4px;
+  transform: rotate(45deg);
+}
+.ais-DropdownMenu-active-facets {
+  background: #00f;
+  width: 23px;
+  height: 23px;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: 800;
+}
+.ais-DropdownMenu-item-count {
+  color: #999;
+  font-size: .8em;
+}
