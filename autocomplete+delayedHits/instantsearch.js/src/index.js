@@ -2,9 +2,6 @@
 
 const appId = '5NICTDJ5Q3',
 apiKey = 'fe2708f4939640ae043e0a04008fbb10',
-// latencyAppId = 'latency',
-// latencyApiKey = '6be0576ff61c053d5f9a3225e2a90f76',
-// latencyClient = algoliasearch(latencyAppId, latencyApiKey),
 indexName = 'instant_search',
 client = algoliasearch(appId, apiKey),
 index = client.initIndex(indexName),
@@ -68,8 +65,8 @@ function app(opts) {
       container: '#hits',
       hitsPerPage: 10,
       templates: {
-        item: document.querySelector(`#hit-template`).innerHTML,
-        empty: document.querySelector(`#no-results-template`).innerHTML,
+        item: $(`#hit-template`).html(),
+        empty: $(`#no-results-template`).html()
       },
       transformData: {
         item: function (item) {
