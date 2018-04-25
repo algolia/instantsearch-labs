@@ -1,5 +1,3 @@
-/* global instantsearch */
-
 /* global instantsearch autocomplete */
 
 const appId = '5NICTDJ5Q3',
