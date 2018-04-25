@@ -68,8 +68,8 @@ function app(opts) {
       container: '#hits',
       hitsPerPage: 10,
       templates: {
-        item: getTemplate('hit'),
-        empty: getTemplate('no-results'),
+        item: document.querySelector(`#hit-template`).innerHTML,
+        empty: document.querySelector(`#no-results-template`).innerHTML,
       },
       transformData: {
         item: function (item) {
@@ -129,7 +129,7 @@ function app(opts) {
       showParentLevel: true,
       limit: 10,
       templates: {
-        header: getHeader('Category'),
+        header: '<h5>Category</h5>',
         item: '<a href="javascript:void(0);" class="facet-item {{#isRefined}}active{{/isRefined}}"><span class="facet-name"><i class="fa fa-angle-right"></i> {{value}}</span class="facet-name"><span class="ais-hierarchical-menu--count">{{count}}</span></a>' // eslint-disable-line
       },
     })
@@ -152,7 +152,7 @@ function app(opts) {
         },
       },
       templates: {
-        header: getHeader('Brand'),
+        header: '<h5>Brand</h5>'
       },
       collapsible: {
         collapsed: false,
@@ -170,7 +170,7 @@ function app(opts) {
         },
       },
       templates: {
-        header: getHeader('Price'),
+        header: '<h5>Price</h5>'
       },
       collapsible: {
         collapsed: false,
@@ -188,7 +188,7 @@ function app(opts) {
         button: 'Apply',
       },
       templates: {
-        header: getHeader('Price range'),
+        header: '<h5>Price range</h5>'
       },
       collapsible: {
         collapsed: true,
@@ -205,7 +205,7 @@ function app(opts) {
         andUp: '& Up',
       },
       templates: {
-        header: getHeader('Rating'),
+        header: '<h5>Rating</h5>'
       },
       collapsible: {
         collapsed: false,
@@ -222,7 +222,7 @@ function app(opts) {
         on: true,
       },
       templates: {
-        header: getHeader('Shipping'),
+        header: '<h5>Shipping</h5>'
       },
       collapsible: {
         collapsed: true,
@@ -238,7 +238,7 @@ function app(opts) {
       limit: 10,
       showMore: true,
       templates: {
-        header: getHeader('Type'),
+        header: '<h5>Type</h5>'
       },
       collapsible: {
         collapsed: true,
@@ -275,15 +275,6 @@ function app(opts) {
 //  Helper functions
 //
 // ---------------------
-
-
-function getTemplate(templateName) {
-  return document.querySelector(`#${templateName}-template`).innerHTML;
-}
-
-function getHeader(title) {
-  return `<h5>${title}</h5>`;
-}
 
 function getCategoryBreadcrumb(item) {
   const highlightValues = item._highlightResult.categories || [];
