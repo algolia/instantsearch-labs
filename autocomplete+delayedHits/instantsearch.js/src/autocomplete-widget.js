@@ -1,6 +1,6 @@
 function autocompleteRenderFn(renderParams, isFirstRendering) {
   let {
-      container,
+    container,
     placeholder,
     delayTime,
     nbSuggestions,
@@ -23,7 +23,6 @@ function autocompleteRenderFn(renderParams, isFirstRendering) {
       `<input type="search" class="${inputClass}" id="aa-search-input" placeholder="${placeholder}"/>`
     );
 
-
     autocomplete(`.${inputClass}`, {
       hint: false
     }, [{
@@ -41,43 +40,39 @@ function autocompleteRenderFn(renderParams, isFirstRendering) {
       .on('autocomplete:selected', function (event, suggestion, dataset) {
         $(`.${inputClass}`).val(suggestion.query);
         renderParams.refine(suggestion.query);
-        $("main").removeClass("grayout");
       })
       .on('autocomplete:cursorchanged', function (event, suggestion, dataset) {
         $(`.${inputClass}`).val(suggestion.query);
         renderParams.refine(suggestion.query);
       });
 
-    let debounceTimer = null;
-    let lastQueryUpdatedAt = 0;
-
-    // This is the regular instantSearch update of results
+    // This controls the updating of the results behind the autocomplete
     $container.find(`.${inputClass}`).on('input', function (event) {
+
+      // Hide the autocomplete if enter is pressed
       $(document).keypress(function (e) {
         if (e.which == 13) {
           $container.find('.aa-dropdown-menu').hide();
-          $("main").removeClass("grayout");
-        } else {
-          if ($('.aa-suggestion').length) {
-            $("main").addClass("grayout");
-          }
         }
       });
 
+      let debounceTimer = null;
+      let lastQueryUpdatedAt = 0;
       const now = Date.now();
+
+      // If the time elapsed since the last keystroke is less than the ordained delay time, reset the timer
       if ((now - lastQueryUpdatedAt) < delayTime) {
         clearTimeout(debounceTimer);
       }
 
+      // Set the time the last query was update to the current time
       lastQueryUpdatedAt = now;
+
+      // Make the results in the background update for the given delay time
       debounceTimer = setTimeout(function () {
         renderParams.refine(event.target.value);
       }, delayTime);
       return false;
     });
-  }
-  // Gray out hits if suggestion dropdown exists
-  if ($('.aa-dataset-1').find("span").length) {
-    $("main").addClass("grayout");
   }
 }
