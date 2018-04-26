@@ -60,7 +60,7 @@ function autocompleteRenderFn(renderParams, isFirstRendering) {
       let lastQueryUpdatedAt = 0;
       const now = Date.now();
 
-      // If the time elapsed since the last keystroke is less than the ordained delay time, reset the timer
+      // If the time elapsed since the last keystroke is less than the delay time, reset the timer
       if ((now - lastQueryUpdatedAt) < delayTime) {
         clearTimeout(debounceTimer);
       }
