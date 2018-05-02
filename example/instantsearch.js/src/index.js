@@ -13,7 +13,7 @@ const search = instantsearch({
 
 search.addWidget(
   instantsearch.widgets.hits({
-    container: document.querySelector('#products'),
+    container: $('#products'),
     templates: {
       item: '{{{_highlightResult.name.value}}}',
     },
@@ -22,7 +22,7 @@ search.addWidget(
 
 search.addWidget(
   instantsearch.widgets.searchBox({
-    container: document.querySelector('#searchBox'),
+    container: $('#searchBox'),
     placeholder: 'Search for products',
     autofocus: false /* Only to avoid live preview taking focus */,
   })
@@ -30,14 +30,14 @@ search.addWidget(
 
 search.addWidget(
   instantsearch.widgets.refinementList({
-    container: document.querySelector('#brand'),
+    container: $('#brand'),
     attributeName: 'brand',
   })
 );
 
 search.addWidget(
   instantsearch.widgets.pagination({
-    container: document.querySelector('#pagination'),
+    container: $('#pagination'),
   })
 );
 
