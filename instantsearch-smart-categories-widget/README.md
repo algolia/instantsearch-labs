@@ -15,6 +15,8 @@ If results are concentrated inside one category, then the widget will attempt to
 
 It is based on a blog post by developers at Etsy; [Looking at how Etsy displayed category suggestions](https://codeascraft.com/2015/08/31/how-etsy-uses-thermodynamics-to-help-you-search-for-geeky/).
 
+![Live demo](demo.gif)
+
 ### Getting started
 
 #### The old school way
@@ -65,6 +67,12 @@ instantSearch.addWidget(entropicCategories);
 | `entropyValue`           | (Optional) `Number`  | The value used to dictate when to automatically filter. Any calculated value greater than this causes the widget to display values from the next level [See here for an description on how entropy is used](#thermodynamic-entropy) |
 | `categoriesToDisplay`    | (Optional) `Number`  | The amount of categories to display                                                                                                                                                                                                 |
 | `isInDebug`              | (Optional) `Boolean` | Display more information about the widget for debug purposes                                                                                                                                                                        |
+
+### Debug
+
+You can enable debug by setting `isInDebug` to `true`. This will give you controls to adujust the entropy level, as well as see a graph in the console showing current result spead between categories.
+
+![debug](debug.gif)
 
 ### Thermodynamic Entropy
 
