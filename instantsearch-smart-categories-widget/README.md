@@ -1,28 +1,80 @@
 ## Smart category widgets
 
-Based on the [instant search demo](https://github.com/algolia/instant-search-demo/). Display category suggestions based on a query entered in the search bar.
-
-If results are concentrated inside one category, then the widget will attempt to suggest categories inside it recursively until an acceptable spread is found.
-
-### Getting started
-
-1. `yarn` or `npm install` to install dependencies
-2. `yarn run start` or `npm run start` to start the app
-3. visit `localhost:3000` to play with the demo!
+* [Overview](#overview)
+* [Getting started](#getting-started)
+* [Settings](#settings)
+* [Thermodynamic Entropy](#thermodynamic-entropy)
+* [How it works](#how-it-works)
+* [Category Images](#category-images)
 
 ### Overview
 
-The smart categories widget uses [hierarchal facets](https://community.algolia.com/algoliasearch-helper-js/reference.html#hierarchical-facets)) to display relevant category suggestions based on a spread of results. It is based on a blog post [looking at how Etsy displayed category suggestions](https://codeascraft.com/2015/08/31/how-etsy-uses-thermodynamics-to-help-you-search-for-geeky/).
+The smart categories widget uses hierarchal facets to display relevant category suggestions based on a spread of results.
+
+If results are concentrated inside one category, then the widget will attempt to suggest categories inside it recursively until an acceptable spread is found.
+
+It is based on a blog post by developers at Etsy; [Looking at how Etsy displayed category suggestions](https://codeascraft.com/2015/08/31/how-etsy-uses-thermodynamics-to-help-you-search-for-geeky/).
+
+### Getting started
+
+#### The old school way
+
+1. Add `widget-smart-categories.js` and `widget-smart-categories.css` to your project
+
+```html
+<link rel="stylesheet" type="text/css" href='widget-smart-categories.css' />
+<script type="text/javascript" src='widget-smart-categories.js'></script>
+```
+
+1. Add a target div for the widget
+
+```html
+<div id="smart-categories"></div>
+```
+
+2. Create a new widget with your settings
+
+```js
+const smartCategories = SmartCategoriesWidget({
+  hierarchicalCategories: [
+    'hierarchicalCategories.level0',
+    'hierarchicalCategories.level1',
+    'hierarchicalCategories.level2'
+  ],
+  imageAttributePath: 'image',
+  entropyValue: 1.7,
+  categoriesToDisplay: 3,
+  isInDebug: false,
+  containerID: 'smart-categories'
+});
+```
+
+3. Add the widget to your app
+
+```js
+instantSearch.addWidget(entropicCategories);
+```
+
+### Settings
+
+| Property                 | Type                 | Description                                                                                                                                                                                                                         |
+| ------------------------ | -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `hierarchicalCategories` | `Array`              | The fields to use for hierarchical faceting. [See this doc on how to create them](https://www.algolia.com/doc/guides/searching/faceting/#hierarchical-facets)                                                                       |
+| `imageAttributePath`     | `String`             | The field where the url to the record can be found                                                                                                                                                                                  |
+| `containerID`            | `String`             | The ID of the div where the widget should render                                                                                                                                                                                    |
+| `entropyValue`           | (Optional) `Number`  | The value used to dictate when to automatically filter. Any calculated value greater than this causes the widget to display values from the next level [See here for an description on how entropy is used](#thermodynamic-entropy) |
+| `categoriesToDisplay`    | (Optional) `Number`  | The amount of categories to display                                                                                                                                                                                                 |
+| `isInDebug`              | (Optional) `Boolean` | Display more information about the widget for debug purposes                                                                                                                                                                        |
 
 ### Thermodynamic Entropy
 
 Smart category uses entropy to decide what level of results to show. Entropy can be considered the amount of _order_ (or _disorder_) in a system. We can leverage this to see how well spread results are. Results with a high amount of order, can be considered to be well spread, conversely results that exist mostly in a single facet could be considered disordered.
 
-The shannon entropy formula is used to assign logarithmic value to the spread of results. A boundary is set above which the spread is consider too large and category suggestions are displayed from the next level down.
+The Shannon entropy formula is used to assign logarithmic value to the spread of results. A boundary is set above which the spread is consider too large and category suggestions are displayed from the next level down.
 
 ### How it works
 
-#### Retriving the data
+#### Retrieving the data
 
 The widget uses a derived version of the main helper from `instantsearch.js`.
 
