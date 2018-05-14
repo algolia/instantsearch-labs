@@ -1,24 +1,15 @@
 /* Parent container for horizontal scrolling  */
-.dropdown-facet-container {
-  z-index: 999;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-}
 
 /* Parent container for Dropdown Menu */
-.ais-DropdownMenu-container {
+.ais-DropdownRefinementList-container {
   padding: 18px;
   z-index: 998;
-  display: inline-block;
   cursor: pointer;
   position: relative;
+  height: 100%;
 }
 
-.ais-DropdownMenu-List {
+.ais-DropdownRefinementList-List {
   padding: 12px;
   background: #fff;
   position: absolute;
@@ -28,20 +19,26 @@
   border: 1px solid #999;
   border-radius: 5%;
 }
-.ais-DropdownMenu-container:hover .ais-DropdownMenu-List {
+.ais-DropdownRefinementList-container:hover .ais-DropdownRefinementList-List {
   display: inline-block;
 }
-.ais-DropdownMenu-title span {
+.ais-DropdownRefinementList-title span {
   color: gray;
 }
-.ais-DropdownMenu-item-label {
-  display: block;
+.ais-DropdownRefinementList-item-label {
+  display: flex;
   cursor: pointer;
+  align-items: center;
+  white-space: nowrap;
+  flex-basis: calc(25% - 20px);
 }
-.ais-DropdownMenu-item-label-desc {
+.ais-DropdownRefinementList-item-label span {
+  padding: 0 5px;
+}
+.ais-DropdownRefinementList-item-label-desc {
   margin-left: 8px;
 }
-.ais-DropdownMenu-caret-down {
+.ais-DropdownRefinementList-caret-down {
   border: solid #999;
   border-width: 0 2px 2px 0;
   display: inline-block;
@@ -50,7 +47,7 @@
   margin-left: 4px;
   transform: rotate(45deg);
 }
-.ais-DropdownMenu-active-facets {
+.ais-DropdownRefinementList-active-facets {
   background: #00f;
   width: 23px;
   height: 23px;
@@ -61,7 +58,7 @@
   margin-bottom: 0;
   font-weight: 800;
 }
-.ais-DropdownMenu-item-count {
+.ais-DropdownRefinementList-item-count {
   color: #999;
-  font-size: .8em;
+  font-size: 0.8em;
 }
