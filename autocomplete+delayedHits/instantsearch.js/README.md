@@ -1,4 +1,11 @@
-# Custom autocomplete + delayed IS hits widget
+# `autocomplete + delayed IS hits widget`
+
+🎥 **[See it live on CodeSandbox](https://codesandbox.io/s/mzlx3lp3zx).**
+🎥 **[See it live on the demo-server](https://internal-preview.algolia.com/delayed-hits-demo).**
+
+## Demo
+
+![demo of autocomplete+IS](demo.gif)
 
 ## Description
 
@@ -16,9 +23,6 @@ The widget is built via the [searchBox connector](https://community.algolia.com/
 The custom render function passed to the connector appends an `<input>` with an integrated `autocomplete.js` into the DOM element of your choice. The autocomplete is populated with suggestions from a suggestion index, and when one of these suggestions is chosen, makes this the query. The number of suggestions is an optional parameter with a default of 5.
 
 Additionally, whenever a keystroke is entered, a timer is used to determine when to update the instant search hits in the background.  The time delay is an optional parameter with a default of 500 ms. 
-
-* [See it live on Codesandbox](https://codesandbox.io/s/x7v977n2mz)
-* [See it live on the demo-server](https://internal-preview.algolia.com/delayed-hits-demo)
 
 ### Requirements
 Both the autocomplete plug-in as well as the custom widget make use of jQuery.  As such, the `autocomplete-widget.js` must be included after `autocomplete.js` which should be included after jQuery.
@@ -69,5 +73,6 @@ yarn start
 ### Step 3
 * Profit! 💵💵💵
 
-## Known limitations
-None
+## Additional Reading
+[Check out the blogpost about autocomplete on mobile](https://blog.algolia.com/search-autocomplete-on-mobile/)
+
