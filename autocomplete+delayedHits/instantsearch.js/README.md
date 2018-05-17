@@ -75,5 +75,5 @@ yarn start
 * Profit! 💵💵💵
 
 ## Additional Reading
-[Check out the blogpost about autocomplete on mobile](https://blog.algolia.com/search-autocomplete-on-mobile/)
+Check out the [blogpost about autocomplete on mobile](https://blog.algolia.com/search-autocomplete-on-mobile/)!
 
