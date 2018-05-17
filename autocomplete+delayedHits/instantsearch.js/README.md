@@ -1,6 +1,7 @@
 # `autocomplete + delayed IS hits widget`
 
 🎥 **[See it live on CodeSandbox](https://codesandbox.io/s/mzlx3lp3zx).**
+
 🎥 **[See it live on the demo-server](https://internal-preview.algolia.com/delayed-hits-demo).**
 
 ## Demo
