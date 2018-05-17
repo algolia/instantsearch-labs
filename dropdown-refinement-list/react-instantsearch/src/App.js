@@ -32,7 +32,7 @@ export default class App extends Component {
           </nav>
           <div style={{ display: 'flex', justifyItems: 'flex-start' }}>
             <DropdownRefinementList hoverable attribute={'categories'} />
-            <DropdownRefinementList hoverable attribute={'brand'} />
+            <DropdownRefinementList attribute={'brand'} />
           </div>
           <div style={{ marginTop: 64 }}>
             <Hits hitComponent={Item} />

@@ -49,16 +49,21 @@ class DropdownRefinementList extends Component {
   selectItem = (item, resetQuery) => {
     this.props.refine(item.value);
   };
-  handleClick = e => {
+  handleEvent = e => {
     this.setState({ active: !this.state.active });
   };
   render() {
     const { items, attribute, hoverable, currentRefinement } = this.props;
     const { active, mobile } = this.state;
     const title = this.capitalizeFirst(attribute);
-    return mobile || !hoverable ? (
-      <div className="ais-DropdownRefinementList-container">
-        <div className={cx('title-container')} onClick={this.handleClick}>
+    console.log(this.state);
+    return (
+      <div
+        className="ais-DropdownRefinementList-container"
+        onMouseLeave={hoverable && !mobile && this.handleEvent}
+        onMouseEnter={hoverable && !mobile && this.handleEvent}
+      >
+        <div className={cx('title-container')} onClick={this.handleEvent}>
           <span className="ais-DropdownRefinementList-title">
             {title}{' '}
             {currentRefinement.length > 0 ? (
@@ -74,22 +79,6 @@ class DropdownRefinementList extends Component {
           </div>
         )}
       </div>
-    ) : (
-      <div className="ais-DropdownRefinementList-container">
-        <div className={cx('title-container')}>
-          <span className="ais-DropdownRefinementList-title">
-            {title}{' '}
-            {currentRefinement.length > 0 ? (
-              <p className={cx('active-facets')}> {currentRefinement.length}</p>
-            ) : (
-              <i className={cx('caret-down')} />
-            )}
-          </span>
-        </div>
-        <div className="ais-DropdownRefinementList-List">
-          {items.map(this.renderItem)}
-        </div>
-      </div>
     );
   }
 }
@@ -100,7 +89,7 @@ DropdownRefinementList.propTypes = {
   limit: PropTypes.number,
 };
 DropdownRefinementList.defaultProps = {
-  hoverable: true,
+  hoverable: false,
 };
 
 export default connectRefinementList(DropdownRefinementList);
