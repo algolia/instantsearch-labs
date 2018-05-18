@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { InstantSearch, SearchBox, Hits } from 'react-instantsearch/dom';
 import DropdownRefinementList from './component/DropdownRefinementList';
-import './component/Dropdown.css';
+import './component/DropdownRefinementList.css';
 const Item = ({ hit }) => {
   return (
     <div className="item">
@@ -32,7 +32,10 @@ export default class App extends Component {
           </nav>
           <div style={{ display: 'flex', justifyItems: 'flex-start' }}>
             <DropdownRefinementList hoverable attribute={'categories'} />
-            <DropdownRefinementList attribute={'brand'} />
+            <DropdownRefinementList
+              defaultRefinement={['Apple']}
+              attribute={'brand'}
+            />
           </div>
           <div style={{ marginTop: 64 }}>
             <Hits hitComponent={Item} />
