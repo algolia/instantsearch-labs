@@ -1,4 +1,4 @@
-#DropdownRefinementList Widget
+# DropdownRefinementList Widget
 
 🎥 **[See it live on CodeSandbox](https://codesandbox.io/s/6x3l73pkpw).**
 
