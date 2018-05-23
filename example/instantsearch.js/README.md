@@ -1,26 +1,37 @@
-# Example
+You need to follow this template when adding a new lab.
+
+# Example Name
+
+🎥 **[See it live on CodeSandbox](https://codesandbox.io/s/github/algolia/instantsearch-labs/tree/master/example/instantsearch.js).**
+
+## Demo
+
+[Include a GIF]
 
 ## Description
 
-This is an example of an experimentation using InstantSearch.js. 
+This is an example of an experimentation using InstantSearch.js.
 
-[See it live on Codesandobox](https://codesandbox.io/s/github/algolia/instantsearch-labs/tree/master/example/instantsearch.js)
+**Table of Contents**
 
-## Running the experimentation locally
+## Get the code
 
-```
-yarn
-yarn start
-```
+### JavaScript
 
-## Tutorial
+### CSS
 
-### Step1 
+## Usage
 
-### Step2
-
-### ...
+### Requirements
 
 ## Known limitations
 
-None
+## Examples
+
+## API
+
+### Options
+
+## Implementation details
+
+## Contributing
