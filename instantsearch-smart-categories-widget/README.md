@@ -19,8 +19,6 @@ It is based on a blog post by developers at Etsy; [Looking at how Etsy displayed
 
 ### Getting started
 
-#### The old school way
-
 1. Add `widget-smart-categories.js` and `widget-smart-categories.css` to your project
 
 ```html
@@ -74,13 +72,13 @@ You can enable debug by setting `isInDebug` to `true`. This will give you contro
 
 ![debug](debug.gif)
 
-### Thermodynamic Entropy
+### How it works
+
+### Built using the concept of Thermodynamic Entropy
 
 Smart category uses entropy to decide what level of results to show. Entropy can be considered the amount of _order_ (or _disorder_) in a system. We can leverage this to see how well spread results are. Results with a high amount of order, can be considered to be well spread, conversely results that exist mostly in a single facet could be considered disordered.
 
 The Shannon entropy formula is used to assign logarithmic value to the spread of results. A boundary is set above which the spread is consider too large and category suggestions are displayed from the next level down.
-
-### How it works
 
 #### Retrieving the data
 
