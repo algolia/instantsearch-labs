@@ -1,0 +1,63 @@
+/* Parent container for horizontal scrolling  */
+
+/* Parent container for Dropdown Menu */
+.ais-DropdownRefinementList-container {
+  padding: 18px;
+  z-index: 998;
+  cursor: pointer;
+  position: relative;
+  height: 100%;
+}
+
+.ais-DropdownRefinementList-List {
+  padding: 12px;
+  background: #fff;
+  position: absolute;
+  margin-top: 12px;
+  margin-left: -6px;
+  border: 1px solid #999;
+  border-radius: 5%;
+}
+.ais-DropdownRefinementList-container:hover .ais-DropdownRefinementList-List {
+  display: inline-block;
+}
+.ais-DropdownRefinementList-title span {
+  color: gray;
+}
+.ais-DropdownRefinementList-item-label {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  white-space: nowrap;
+  flex-basis: calc(25% - 20px);
+}
+.ais-DropdownRefinementList-item-label span {
+  padding: 0 5px;
+}
+.ais-DropdownRefinementList-item-label-desc {
+  margin-left: 8px;
+}
+.ais-DropdownRefinementList-caret-down {
+  border: solid #999;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  margin-bottom: 3px;
+  margin-left: 4px;
+  transform: rotate(45deg);
+}
+.ais-DropdownRefinementList-active-facets {
+  background: #00f;
+  width: 23px;
+  height: 23px;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: 800;
+}
+.ais-DropdownRefinementList-item-count {
+  color: #999;
+  font-size: 0.8em;
+}

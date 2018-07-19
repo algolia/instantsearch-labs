@@ -1,11 +1,11 @@
 /* global instantsearch autocomplete */
 
-const appId = '5NICTDJ5Q3',
-apiKey = 'fe2708f4939640ae043e0a04008fbb10',
-indexName = 'instant_search',
-client = algoliasearch(appId, apiKey),
-index = client.initIndex(indexName),
-suggestionsIndex = client.initIndex('prefix_query_suggestions');
+const appId = "latency",
+  apiKey = "6be0576ff61c053d5f9a3225e2a90f76",
+  indexName = "instant_search",
+  client = algoliasearch(appId, apiKey),
+  suggestionsIndex = client.initIndex("instantsearch_query_suggestions"),
+  index = client.initIndex(indexName);
 
 
 app({
@@ -287,6 +287,3 @@ function getStarsHTML(rating, maxRating) {
   }
   return html;
 }
-
-
-

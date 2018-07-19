@@ -1,28 +1,28 @@
 # How to Contribute
 
-## Convention 
+## Convention
 
 This repository respect a structure following this particular convention:
 
 * Experimentation name
-    * InstantSearch.js
-        * src
-        * README.md 
-        * ...
-    * React InstantSearch
-    * Vue InstantSearch
-    * Angular InstantSearch
+  * InstantSearch.js
+    * src
+    * README.md
+    * ...
+  * React InstantSearch
+  * Vue InstantSearch
+  * Angular InstantSearch
 
-⚠️ **Warning:** You’re not force to add an experimentation for every InstantSearch. If it's a new one, just add the flavor(s) you cover. 
+⚠️ **Warning:** You’re not force to add an experimentation for every InstantSearch. If it's a new one, just add the flavor(s) you cover.
 
 ## Getting Started
 
-To help you get started we provide templates that runs in codesandbox and that you can re-use. 
+To help you get started we provide templates that runs in codesandbox and that you can re-use.
 
-- [InstantSearch.js](https://codesandbox.io/s/github/algolia/instantsearch-templates/tree/master/src/InstantSearch.js)
-- [React InstantSearch](https://codesandbox.io/s/github/algolia/instantsearch-templates/tree/master/src/React%20InstantSearch)
-- [Angular InstantSearch](https://codesandbox.io/s/github/algolia/instantsearch-templates/tree/master/src/Angular%20InstantSearch) (TODO)
-- [Vue InstantSearch](https://codesandbox.io/s/github/algolia/instantsearch-templates/tree/master/src/Vue%20InstantSearch) (TODO)
+* [InstantSearch.js](https://codesandbox.io/s/github/algolia/instantsearch-templates/tree/master/src/InstantSearch.js)
+* [React InstantSearch](https://codesandbox.io/s/github/algolia/instantsearch-templates/tree/master/src/React%20InstantSearch)
+* [Angular InstantSearch](https://codesandbox.io/s/github/algolia/instantsearch-templates/tree/master/src/Angular%20InstantSearch) (TODO)
+* [Vue InstantSearch](https://codesandbox.io/s/github/algolia/instantsearch-templates/tree/master/src/Vue%20InstantSearch) (TODO)
 
 Once you opened the template on codesandbox, you can easily download it and start hacking!
 
@@ -32,40 +32,56 @@ Source: [InstantSearch Templates](https://github.com/algolia/instantsearch-templ
 
 ## Readme
 
-Every experimentation should have a README following this structure: 
+Every experimentation should have a README following this structure:
 
-- [Description](#description)
-- [Running the experimentation locally](#running-the-experimentation-locally)
-- [Tutorial](#tutorial)
-- [Known limitations](#known-limitations)
+* [CodeSandbox Link](#codesandbox-link)
+* [Demo](#demo)
+* [Description](#description)
+* [Get the code](#get-the-code)
+* [Usage](#usage)
+* [API](#api)
+* [Examples](#examples)
+* [Implementation details](#implementation-details)
+* [Contributing](#contributing)
 
-### Description
+You can check this [README](https://github.com/algolia/instantsearch-labs/blob/master/instantsearch-relevance-widget/instantsearch.js/README.md) for a real example.
 
-Explain here what your experimentation is doing and its purposes.
+#### Codesandbox Link
 
-#### Codesandbox
-
-If feasible add a codesandbox link that will allow anyone to play directly with it.  
+If feasible add a codesandbox link that will allow anyone to play directly with it.
 
 **Link Format**
 
 `https://codesandbox.io/s/github/algolia/instantsearch-labs/tree/master/experimentation-name/instantsearch-flavor`
 
-### Running the experimentation locally
+### Demo
 
-Add here instructions about how to run locally the experimentation. It should be as simple as:
+Include a GIF that shows what the experiment is about.
 
-```
-yarn
-yarn start
-```
+### Description
 
-### Tutorial
+Explain here what your experimentation is doing and its purposes.
 
-Describe the required steps to reproduce the experimentation on another InstantSearch project. 
+Include a table of contents.
 
-If there's any required indices configuration, do not forget to mention them.
+### Get the code
 
-### Known limitations  
+Describe what they need to do, to put the experiment in their own codebase.
 
-If the experimentation as edge cases or know limitation, describe them here. 
+### Usage
+
+Add here a snippet of code explaining how to use the experiment.
+
+Add any requirements or known limitation.
+
+### API
+
+Describe the API of the experiment
+
+### Implementation details
+
+Explain how the experiementation was realised, what was used internally.
+
+### Contributing
+
+Explain how to contribution to the experiment.
