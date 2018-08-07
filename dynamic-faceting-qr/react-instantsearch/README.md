@@ -205,4 +205,4 @@ So what we have now is a component which tells us which widgets to render with w
 
 This gives us a final result of:
 
-[![screenshot](https://codesandbox.io/api/v1/sandboxes/2x0pvzvr8p/screenshot.png)](https://codesandbox.io/s/github/algolia/dynamic-faceting-guide)
+[![screenshot](https://codesandbox.io/api/v1/sandboxes/2x0pvzvr8p/screenshot.png)](https://github.com/algolia/instantsearch-labs/tree/master/dynamic-faceting-qr/react-instantsearch)
