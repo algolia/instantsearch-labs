@@ -25,7 +25,7 @@ const dynamicFacets = [
   {
     query: 'iphone',
     facets: [
-      { attribute: 'category', widgetName: 'RefinementList' },
+      { attribute: 'categories', widgetName: 'RefinementList' },
       { attribute: 'type', widgetName: 'Menu' },
     ],
     objectID: 'dynamic_query_iphone',
@@ -33,8 +33,8 @@ const dynamicFacets = [
   {
     query: 'smartphone',
     facets: [
-      { attribute: 'brand', widgetName: 'Menu' },
-      { attribute: 'price', widgetName: 'RangeInput' },
+      { attribute: 'manufacturer', widgetName: 'Menu' },
+      { attribute: 'salePrice', widgetName: 'RangeInput' },
     ],
     objectID: 'dynamic_query_smartphone',
   },
