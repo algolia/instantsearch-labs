@@ -24,7 +24,7 @@ const App = () => (
           {({ facets }) =>
             facets.map(({ attribute, Widget }) => (
               <Panel header={attribute} key={attribute}>
-                <Widget attribute={attribute} key={attribute} />
+                <Widget attribute={attribute} />
               </Panel>
             ))
           }

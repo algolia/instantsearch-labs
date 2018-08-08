@@ -10,7 +10,7 @@ We want to create a interface like [this one](https://preview.algolia.com/dynami
 
 ## The strategy
 
-1.  add all the possible facets to your indexing configuration as regular
+1.  add all the possible facets to your indexing configuration as usually
 2.  add query rules for the situations in which you want certain facets to show up
 3.  render the facets decided by the query rule
 
@@ -73,7 +73,7 @@ These query rules can also be added via the dashboard. make sure to choose the s
 
 ## Dynamically displaying facets
 
-In our query rules we made four possible dynamic facets: categories, type, brand, price. We now want to display these in a React InstantSearch app. First let's create a start:
+In our query rules we made four possible dynamic facets: categories, type, brand, price. We now want to display these in a React InstantSearch app. First let's create a basic React InstantSearch interface without any facets:
 
 ```js
 import React from 'react';
@@ -145,31 +145,31 @@ class DynamicFacets extends Component {
       return null;
     }
 
-      // get the data returned by the query rule
-      const uniques = this.props.searchResults.userData
-        // only get the dynamic facet type
-        .filter(({ type }) => type === 'dynamic_facets')
-        // only add one widget per attribute
-        .reduce((acc, { facets }) => {
-          facets.forEach(({ attribute, widgetName }) =>
-            acc.set(attribute, widgetName)
-          );
-          return acc;
-        }, new Map());
+    // get the data returned by the query rule
+    const uniques = this.props.searchResults.userData
+      // only get the dynamic facet type
+      .filter(({ type }) => type === 'dynamic_facets')
+      // only add one widget per attribute
+      .reduce((acc, { facets }) => {
+        facets.forEach(({ attribute, widgetName }) =>
+          acc.set(attribute, widgetName)
+        );
+        return acc;
+      }, new Map());
 
-      const facets = [...uniques]
-        // limit it
-        .slice(0, this.props.limit)
-        // turn the name of the widget into its value
-        .map(([attribute, widgetName]) => ({
-          attribute,
-          widgetName,
-          Widget: DynamicWidgets[widgetName],
-        }));
+    const facets = [...uniques]
+      // limit it
+      .slice(0, this.props.limit)
+      // turn the name of the widget into its value
+      .map(([attribute, widgetName]) => ({
+        attribute,
+        widgetName,
+        Widget: DynamicWidgets[widgetName],
+      }));
 
-        return this.props.children({ facets });
-      }
-    }
+    return this.props.children({ facets });
+  }
+}
 
 export default connectStateResults(DynamicFacets);
 ```
@@ -195,7 +195,7 @@ So what we have now is a component which tells us which widgets to render with w
   {({ facets }) =>
     facets.map(({ attribute, Widget }) => (
       <Panel header={attribute} key={attribute}>
-        <Widget attribute={attribute} key={attribute} />
+        <Widget attribute={attribute} />
       </Panel>
     ))
   }
