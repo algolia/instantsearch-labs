@@ -75,7 +75,7 @@ These query rules can also be added via the dashboard. make sure to choose the s
 
 In our query rules we made four possible dynamic facets: categories, type, brand, price. We now want to display these in a React InstantSearch app. First let's create a start:
 
-```jsx
+```js
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {
@@ -176,7 +176,7 @@ export default connectStateResults(DynamicFacets);
 
 This component essentially gives us access to the dynamic facets applying here. We can now make use of these facets and render them where we used to have `<div>We will add dynamic facets here</div>`.
 
-```jsx
+```js
 <DynamicFacets>
   {({ facets }) =>
     facets.map(({ attribute, widgetName }) => (
@@ -190,7 +190,7 @@ This component essentially gives us access to the dynamic facets applying here. 
 
 So what we have now is a component which tells us which widgets to render with which attribute. The next step is to actually render them:
 
-```jsx
+```js
 <DynamicFacets>
   {({ facets }) =>
     facets.map(({ attribute, Widget }) => (
