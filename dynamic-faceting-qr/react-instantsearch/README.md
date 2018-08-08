@@ -141,7 +141,10 @@ class DynamicFacets extends Component {
   };
 
   render() {
-    if (this.props.searchResults && this.props.searchResults.userData) {
+    if (!(this.props.searchResults && this.props.searchResults.userData)) {
+      return null;
+    }
+
       // get the data returned by the query rule
       const uniques = this.props.searchResults.userData
         // only get the dynamic facet type
@@ -164,13 +167,9 @@ class DynamicFacets extends Component {
           Widget: DynamicWidgets[widgetName],
         }));
 
-      if (facets.length > 0) {
         return this.props.children({ facets });
       }
     }
-    return null;
-  }
-}
 
 export default connectStateResults(DynamicFacets);
 ```
