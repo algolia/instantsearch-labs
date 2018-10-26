@@ -8,7 +8,7 @@
 
 ## Description
 
-This is the `TagsBox` Labs widget for [React InstantSearch](https://community.algolia.com/instantsearch.js/). You can use this widget to search and select tags with Algolia and use them later on for any purpose want.
+This is the `TagsBox` Labs widget for [React InstantSearch](https://community.algolia.com/react-instantsearch/). You can use this widget to search and select tags with Algolia and use them later on for any purpose want.
 
 This widget displays an input that will offer tag suggestions while user is typing. Tags can be then clicked to be added to the input.
 
