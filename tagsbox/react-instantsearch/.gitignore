@@ -9,6 +9,7 @@
 # production
 /build
 /dist
+*.css.map
 
 # misc
 .idea
