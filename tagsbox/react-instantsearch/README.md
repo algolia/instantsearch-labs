@@ -8,7 +8,7 @@
 
 ## Description
 
-This is the `TagsBox` Labs widget for [React InstantSearch](https://community.algolia.com/instantsearch.js/). You can use this widget to search and select tags with Algolia and use them later on for any purpose want.
+This is the `TagsBox` Labs widget for [React InstantSearch](https://community.algolia.com/react-instantsearch/). You can use this widget to search and select tags with Algolia and use them later on for any purpose want.
 
 This widget displays an input that will offer tag suggestions while user is typing. Tags can be then clicked to be added to the input.
 
@@ -67,7 +67,7 @@ export const SuggestedTagComponent = ({ hit }) => (
     <TagsBox
         selectedTagComponent={SelectedTagComponent}
         suggestedTagComponent={SuggestedTagComponent}
-        onUpdate={(newTags, oldTags) => console.log}
+        onUpdate={(newTags, previousTags) => console.log(newTags, previousTags)}
         translations={{ placeholder: "Search…", noResult: "…" }}
     />
 </InstantSearch>
@@ -75,7 +75,7 @@ export const SuggestedTagComponent = ({ hit }) => (
 
 ### Requirements
 
-You should encapsulte the `<TagsBox />` component inside an `<InstantSearch />` one.
+You should encapsulate the `<TagsBox />` component inside an `<InstantSearch />` one.
 
 To work properly, **you'll need to provide three props to the component**:
 
@@ -83,10 +83,10 @@ To work properly, **you'll need to provide three props to the component**:
   - receive a `hit` as parameter (coming from Algolia)
 - `suggestedTagComponent` (component): describe how a suggested tag should be displayed
   - receive a `hit` as parameter (coming from Algolia)
-- `onUpdate` (function): call each time a tag is added or removed
-  - receive `actualTags` and `oldTags` as parameters, both arrays that respectively contains the current selected tags and the previous ones
+- `onUpdate` (function): called each time a tag is added or removed
+  - receive two parameters that represents the new tags and the previous tags. They are both arrays that respectively contains the current selected tags and the previous ones
 
-It is possible to get encapsulate the `<TagBox />` component in an `<Index />` one if you wish to target different indices from the same InstantSearch instance.
+It is possible to encapsulate the `<TagBox />` component in an `<Index />` one if you wish to target different indices from the same InstantSearch instance.
 
 ## Examples
 
