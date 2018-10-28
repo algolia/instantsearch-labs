@@ -67,7 +67,7 @@ export const TagSuggestionComponent = ({ hit }) => (
     <TagsBox
         tagSelectedComponent={TagSelectedComponent}
         tagSuggestionComponent={TagSuggestionComponent}
-        onUpdate={(newTags, oldTags) => console.log}
+        onUpdate={(newTags, previousTags) => console.log(newTags, previousTags)}
         translations={{ placeholder: "Search…", noResult: "…" }}
     />
 </InstantSearch>
