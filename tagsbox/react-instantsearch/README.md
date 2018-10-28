@@ -75,7 +75,7 @@ export const TagSuggestionComponent = ({ hit }) => (
 
 ### Requirements
 
-You should encapsulte the `<TagsBox />` component inside an `<InstantSearch />` one.
+You should encapsulate the `<TagsBox />` component inside an `<InstantSearch />` one.
 
 To work properly, **you'll need to provide three props to the component**:
 
