@@ -34,7 +34,16 @@ class SuggestedTagsContainer extends React.Component {
 
     render() {
         const { isOpened } = this.state;
-        const { currentRefinement, hits, onAddTag, hoveredTagIndex, tagSuggestionComponent: TSCo, createTagComponent: CTCo, createTagAttribute, translations } = this.props;
+        const {
+            currentRefinement,
+            hits,
+            onAddTag,
+            hoveredTagIndex,
+            suggestedTagComponent: SuggestedTagComponent,
+            noResultComponent: NoResultComponent,
+            createTagAttribute,
+            translations
+        } = this.props;
 
         if (!isOpened) {
             return false;
@@ -50,7 +59,7 @@ class SuggestedTagsContainer extends React.Component {
                             className={`ais-SuggestedTagsBox-tag ${hoveredTagIndex === hitIdx ? 'hovered' : ''}`}
                             onClick={() => onAddTag(hit)}
                         >
-                            <TSCo hit={hit} />
+                            <SuggestedTagComponent hit={hit} />
                         </li>
                     )}
 
@@ -69,7 +78,7 @@ class SuggestedTagsContainer extends React.Component {
                                 _new: true
                             })}
                         >
-                            <CTCo query={currentRefinement} />
+                            <NoResultComponent query={currentRefinement} />
                         </li>
                     }
                 </ul>
@@ -82,7 +91,7 @@ SuggestedTagsContainer.propTypes = {
     tags: PropTypes.array.isRequired,
     onAddTag: PropTypes.func.isRequired,
     hoveredTagIndex: PropTypes.number.isRequired,
-    tagSuggestionComponent: PropTypes.func.isRequired
+    suggestedTagComponent: PropTypes.func.isRequired
 };
 
 export default SuggestedTagsContainer;

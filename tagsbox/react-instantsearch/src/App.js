@@ -18,7 +18,7 @@ export const TagSuggestionComponent = ({ hit }) => (
     </Fragment>
 );
 
-export const CreateTagComponent = ({ query }) => (
+export const NoResultComponent = ({ query }) => (
     <Fragment>
         <strong>"{query}"</strong> airport does not exist. Create it?
     </Fragment>
@@ -38,9 +38,9 @@ class App extends Component {
               indexName="airports">
               <Index indexName="airports">
                   <Tags
-                      tagSelectedComponent={TagSelectedComponent}
-                      tagSuggestionComponent={TagSuggestionComponent}
-                      createTagComponent={CreateTagComponent}
+                      selectedTagComponent={TagSelectedComponent}
+                      suggestedTagComponent={TagSuggestionComponent}
+                      noResultComponent={NoResultComponent}
                       createTagAttribute="iata_code"
                       onUpdate={this.onTagsUpdate}
                       translations={{ placeholder: "City, Airport IATA…", noResult: "No airport found." }}

@@ -84,8 +84,8 @@ class Tags extends React.Component {
 }
 
 Tags.propTypes = {
-    tagSelectedComponent: PropTypes.func.isRequired,
-    tagSuggestionComponent: PropTypes.func.isRequired,
+    selectedTagComponent: PropTypes.func.isRequired,
+    suggestedTagComponent: PropTypes.func.isRequired,
     onUpdate: PropTypes.func.isRequired,
     translations: PropTypes.object,
     limitTo: PropTypes.number

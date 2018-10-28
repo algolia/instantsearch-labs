@@ -47,13 +47,13 @@ The simplest usage is:
 import { InstantSearch } from 'react-instantsearch-dom';
 import TagsBox from 'instansearch-tagsbox-react';
 
-export const TagSelectedComponent = ({ hit }) => (
+export const SelectedTagComponent = ({ hit }) => (
     <Fragment>
         {hit.lastname}
     </Fragment>
 );
 
-export const TagSuggestionComponent = ({ hit }) => (
+export const SuggestedTagComponent = ({ hit }) => (
     <Fragment>
         {hit.firstname} {hit.lastname}
     </Fragment>
@@ -65,8 +65,8 @@ export const TagSuggestionComponent = ({ hit }) => (
     indexName="..."
 >
     <TagsBox
-        tagSelectedComponent={TagSelectedComponent}
-        tagSuggestionComponent={TagSuggestionComponent}
+        selectedTagComponent={SelectedTagComponent}
+        suggestedTagComponent={SuggestedTagComponent}
         onUpdate={(newTags, oldTags) => console.log}
         translations={{ placeholder: "Search…", noResult: "…" }}
     />
@@ -79,9 +79,9 @@ You should encapsulte the `<TagsBox />` component inside an `<InstantSearch />` 
 
 To work properly, **you'll need to provide three props to the component**:
 
-- `tagSelectedComponent` (component): describe how a selected tag should be displayed
+- `selectedTagComponent` (component): describe how a selected tag should be displayed
   - receive a `hit` as parameter (coming from Algolia)
-- `tagSuggestionComponent` (component): describe how a suggested tag should be displayed
+- `suggestedTagComponent` (component): describe how a suggested tag should be displayed
   - receive a `hit` as parameter (coming from Algolia)
 - `onUpdate` (function): call each time a tag is added or removed
   - receive `actualTags` and `oldTags` as parameters, both arrays that respectively contains the current selected tags and the previous ones
@@ -96,10 +96,10 @@ It is possible to get encapsulate the `<TagBox />` component in an `<Index />` o
 
 | Name                              | Type      | Use                                                 |
 | --------------------------------- | --------- | --------------------------------------------------- |
-| tagSelectedComponent (required)   | Component | Describe how a selected tag should be displayed.    |
-| tagSuggestionComponent (required) | Component | Describe how a suggested tag should be displayed.   |
+| selectedTagComponent (required)   | Component | Describe how a selected tag should be displayed.    |
+| suggestedTagComponent (required)  | Component | Describe how a suggested tag should be displayed.   |
 | onUpdate (required)               | Function  | Call each time a tag is added or removed.           |
-| createTagComponent                | Component | Describe how an unexisting tag should be displayed. |
+| NoResultComponent                 | Component | Describe how an unexisting tag should be displayed. |
 | createTagAttribute                | String    | Set which attribut to fill when creating a new tag. |
 | translations                      | Object    | Set the `placeholder` and `noResult` translations.  |
 | limitTo                           | Number    | Restrict the number of tags to select.              |

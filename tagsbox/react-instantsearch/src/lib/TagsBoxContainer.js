@@ -70,7 +70,7 @@ class TagsBoxContainer extends React.Component {
 
     render() {
         const { inputValue, inputDisabled } = this.state;
-        const { tags, currentRefinement, onRemoveTag, tagSelectedComponent: TagSelectedComponent, translations } = this.props;
+        const { tags, currentRefinement, onRemoveTag, selectedTagComponent: SelectedTagComponent, translations } = this.props;
 
         return (
             <div
@@ -80,7 +80,7 @@ class TagsBoxContainer extends React.Component {
                 <ul className="ais-TagsBox-tags">
                     {tags.map(tag =>
                         <li key={tag.objectID} className="ais-TagsBox-tag" onClick={() => onRemoveTag(tag.objectID)}>
-                            <TagSelectedComponent hit={tag} />
+                            <SelectedTagComponent hit={tag} />
                             <span className="ais-TagsBox-removeTag">✕</span>
                         </li>
                     )}
@@ -104,7 +104,7 @@ class TagsBoxContainer extends React.Component {
 TagsBoxContainer.propTypes = {
     tags: PropTypes.array.isRequired,
     onRemoveTag: PropTypes.func.isRequired,
-    tagSelectedComponent: PropTypes.func.isRequired
+    selectedTagComponent: PropTypes.func.isRequired
 };
 
 export default TagsBoxContainer;
