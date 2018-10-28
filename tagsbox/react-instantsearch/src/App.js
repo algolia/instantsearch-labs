@@ -41,27 +41,27 @@ class App extends Component {
     };
 
     render() {
-    return (
-      <div id="app">
-          <InstantSearch
-              appId="6UF5OXUKTD"
-              apiKey="0c5c48f199ef2a73d0e97e6427449d03"
-              indexName="airports">
+        return (
+          <div id="app">
+              <InstantSearch
+                  appId="6UF5OXUKTD"
+                  apiKey="0c5c48f199ef2a73d0e97e6427449d03"
+                  indexName="airports">
 
-              <Index indexName="airports">
-                  <Tags
-                      selectedTagComponent={TagSelectedComponent}
-                      suggestedTagComponent={TagSuggestionComponent}
-                      noResultComponent={NoResultComponent}
-                      onAddTag={this.onAddTag}
-                      onTagsUpdated={this.onTagsUpdated}
-                      translations={{ placeholder: "City, Airport IATA…", noResult: "No airport found." }}
-                      limitTo={2}
-                  />
-              </Index>
-          </InstantSearch>
-      </div>
-    );
+                  <Index indexName="airports">
+                      <Tags
+                          selectedTagComponent={TagSelectedComponent}
+                          suggestedTagComponent={TagSuggestionComponent}
+                          noResultComponent={NoResultComponent}
+                          onAddTag={this.onAddTag}
+                          onTagsUpdated={this.onTagsUpdated}
+                          translations={{ placeholder: "City, Airport IATA…", noResult: "No airport found." }}
+                          limitTo={2}
+                      />
+                  </Index>
+              </InstantSearch>
+          </div>
+        );
     }
 }
 
