@@ -86,7 +86,7 @@ To work properly, **you'll need to provide three props to the component**:
 - `onUpdate` (function): called each time a tag is added or removed
   - receive two parameters that represents the new tags and the previous tags. They are both arrays that respectively contains the current selected tags and the previous ones
 
-It is possible to get encapsulate the `<TagBox />` component in an `<Index />` one if you wish to target different indices from the same InstantSearch instance.
+It is possible to encapsulate the `<TagBox />` component in an `<Index />` one if you wish to target different indices from the same InstantSearch instance.
 
 ## Examples
 
