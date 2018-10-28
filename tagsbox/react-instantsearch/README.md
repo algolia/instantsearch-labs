@@ -98,9 +98,9 @@ It is possible to encapsulate the `<TagBox />` component in an `<Index />` one i
 | --------------------------------- | --------- | --------------------------------------------------- |
 | selectedTagComponent (required)   | Component | Describe how a selected tag should be displayed.    |
 | suggestedTagComponent (required)  | Component | Describe how a suggested tag should be displayed.   |
-| onUpdate (required)               | Function  | Call each time a tag is added or removed.           |
-| NoResultComponent                 | Component | Describe how an unexisting tag should be displayed. |
-| createTagAttribute                | String    | Set which attribut to fill when creating a new tag. |
+| onUpdate (required)               | Function  | Called each time a tag is added or removed.           |
+| NoResultComponent                 | Component | Describe how an no existing tag should be displayed (should be use with `onAddTag` prop). |
+| onAddTag                          | Function  | Called before a tag is added to manipulate the object. It takes either a `hit` (object) or a `value` (string) as parameter and should always return an `object` with a `objectID` value. |
 | translations                      | Object    | Set the `placeholder` and `noResult` translations.  |
 | limitTo                           | Number    | Restrict the number of tags to select.              |
 
