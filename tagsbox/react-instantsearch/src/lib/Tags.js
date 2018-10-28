@@ -29,23 +29,27 @@ class Tags extends React.Component {
 
     addTag = hit => {
         const { tags } = this.state;
-        const { onUpdate } = this.props;
+        const { onAddTag, onTagsUpdated } = this.props;
+
+        if (typeof onAddTag === 'function') {
+            hit = {...onAddTag(hit)};
+        }
 
         this.setState({ tags: [ ...tags,  hit ]}, () => {
-            onUpdate(this.state.tags, tags);
+            onTagsUpdated(this.state.tags, tags);
         });
     };
 
     removeTag = hitObjectID => {
         const { tags } = this.state;
-        const { onUpdate } = this.props;
+        const { onTagsUpdated } = this.props;
 
         const updatedTags = [ ...tags ];
         const indexToRemove = updatedTags.findIndex(tag => tag.objectID === hitObjectID);
         updatedTags.splice(indexToRemove, 1);
 
         this.setState({ tags: updatedTags }, () => {
-            onUpdate(this.state.tags, tags);
+            onTagsUpdated(this.state.tags, tags);
         })
     };
 
@@ -66,18 +70,18 @@ class Tags extends React.Component {
         return (
             <Fragment>
                 <TagsBoxContainer
+                    {...this.props}
                     tags={tags}
                     hoveredTagIndex={hoveredTagIndex}
                     onAddTag={this.addTag}
                     onRemoveTag={this.removeTag}
-                    onUpdateHoveredTag={this.updateHoveredTagIndex}
-                    {...this.props} />
+                    onUpdateHoveredTag={this.updateHoveredTagIndex} />
 
                 <SuggestedTagsContainer
+                    {...this.props }
                     tags={tags}
                     hoveredTagIndex={hoveredTagIndex}
-                    onAddTag={this.addTag}
-                    {...this.props } />
+                    onAddTag={this.addTag} />
             </Fragment>
         )
     }
@@ -86,9 +90,17 @@ class Tags extends React.Component {
 Tags.propTypes = {
     selectedTagComponent: PropTypes.func.isRequired,
     suggestedTagComponent: PropTypes.func.isRequired,
-    onUpdate: PropTypes.func.isRequired,
+    onTagsUpdated: PropTypes.func.isRequired,
     translations: PropTypes.object,
     limitTo: PropTypes.number
 };
+
+export const fakeObjectIDGenerator = () =>
+    Math.random()
+        .toString(36)
+        .substring(2, 15) +
+    Math.random()
+        .toString(36)
+        .substring(2, 15);
 
 export default connectAutoComplete(Tags);

@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { fakeObjectIDGenerator } from './Utils';
-
 class SuggestedTagsContainer extends React.Component {
     constructor(props) {
         super(props);
@@ -40,9 +38,7 @@ class SuggestedTagsContainer extends React.Component {
             onAddTag,
             hoveredTagIndex,
             suggestedTagComponent: SuggestedTagComponent,
-            noResultComponent: NoResultComponent,
-            createTagAttribute,
-            translations
+            noResultComponent: NoResultComponent
         } = this.props;
 
         if (!isOpened) {
@@ -63,20 +59,10 @@ class SuggestedTagsContainer extends React.Component {
                         </li>
                     )}
 
-                    {!hits.length && typeof  createTagAttribute === 'undefined' &&
-                        <li className="ais-SuggestedTagsBox-tag">
-                            {translations.noResult || 'No result found.'}
-                        </li>
-                    }
-
-                    {!hits.length && typeof createTagAttribute !== 'undefined' &&
+                    {!hits.length && typeof NoResultComponent !== 'undefined' &&
                         <li
                             className="ais-SuggestedTagsBox-tag hovered"
-                            onClick={() => onAddTag({
-                                objectID: `_new#${fakeObjectIDGenerator()}`,
-                                [createTagAttribute]: currentRefinement,
-                                _new: true
-                            })}
+                            onClick={() => onAddTag(currentRefinement)}
                         >
                             <NoResultComponent query={currentRefinement} />
                         </li>

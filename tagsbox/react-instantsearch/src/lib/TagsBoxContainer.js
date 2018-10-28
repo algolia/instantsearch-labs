@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { fakeObjectIDGenerator } from './Utils';
-
 class TagsBoxContainer extends React.Component {
     constructor(props) {
         super(props);
@@ -41,7 +39,7 @@ class TagsBoxContainer extends React.Component {
 
     catchSpecialKeys = e => {
         const { inputValue } = this.state;
-        const { hits, tags, hoveredTagIndex, onAddTag, onRemoveTag, onUpdateHoveredTag, createTagAttribute } = this.props;
+        const { hits, tags, hoveredTagIndex, onAddTag, onRemoveTag, onUpdateHoveredTag, noResultComponent } = this.props;
 
         if (e.key === 'ArrowDown') {
             e.preventDefault();
@@ -56,13 +54,10 @@ class TagsBoxContainer extends React.Component {
                 onAddTag(hits[hoveredTagIndex]);
             }
 
-            if (!hits.length && typeof createTagAttribute !== 'undefined') {
-                onAddTag({
-                    objectID: `_new#${fakeObjectIDGenerator()}`,
-                    [createTagAttribute]: inputValue,
-                    _new: true
-                });
+            if (!hits.length && typeof noResultComponent !== 'undefined') {
+                onAddTag(inputValue);
             }
+
         } else if (e.key === 'Backspace' && inputValue.trim() === '' && tags.length > 0) {
             onRemoveTag(tags[tags.length - 1].objectID);
         }

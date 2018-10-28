@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { InstantSearch, Index } from 'react-instantsearch-dom';
 
-import Tags from './lib/Tags';
+import Tags, { fakeObjectIDGenerator } from './lib/Tags';
 
 import './app.css';
 
@@ -25,24 +25,36 @@ export const NoResultComponent = ({ query }) => (
 );
 
 class App extends Component {
-    onTagsUpdate = (actualTags, previousTags) => {
+    onAddTag = hit => {
+        if (typeof hit === 'string') {
+            return {
+                objectID: fakeObjectIDGenerator(),
+                iata_code: hit
+            }
+        }
+
+        return hit;
+    };
+
+    onTagsUpdated = (actualTags, previousTags) => {
         console.log('Tags updated', actualTags);
     };
 
-  render() {
+    render() {
     return (
       <div id="app">
           <InstantSearch
               appId="6UF5OXUKTD"
               apiKey="0c5c48f199ef2a73d0e97e6427449d03"
               indexName="airports">
+
               <Index indexName="airports">
                   <Tags
                       selectedTagComponent={TagSelectedComponent}
                       suggestedTagComponent={TagSuggestionComponent}
                       noResultComponent={NoResultComponent}
-                      createTagAttribute="iata_code"
-                      onUpdate={this.onTagsUpdate}
+                      onAddTag={this.onAddTag}
+                      onTagsUpdated={this.onTagsUpdated}
                       translations={{ placeholder: "City, Airport IATA…", noResult: "No airport found." }}
                       limitTo={2}
                   />
@@ -50,7 +62,7 @@ class App extends Component {
           </InstantSearch>
       </div>
     );
-  }
+    }
 }
 
 export default App;
