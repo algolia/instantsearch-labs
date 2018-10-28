@@ -84,7 +84,7 @@ To work properly, **you'll need to provide three props to the component**:
 - `tagSuggestionComponent` (component): describe how a suggested tag should be displayed
   - receive a `hit` as parameter (coming from Algolia)
 - `onUpdate` (function): called each time a tag is added or removed
-  - receive `actualTags` and `oldTags` as parameters, both arrays that respectively contains the current selected tags and the previous ones
+  - receive two parameters that represents the new tags and the previous tags. They are both arrays that respectively contains the current selected tags and the previous ones
 
 It is possible to get encapsulate the `<TagBox />` component in an `<Index />` one if you wish to target different indices from the same InstantSearch instance.
 
