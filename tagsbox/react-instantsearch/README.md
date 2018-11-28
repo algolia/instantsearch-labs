@@ -41,11 +41,11 @@ You can copy and paste the necessary CSS code from the repository itself, grab i
 
 ## Usage
 
-The simplest usage is:
+Install it with `yarn add instantsearch-tagsbox-react` then, use it as simply as:
 
 ```jsx
 import { InstantSearch } from 'react-instantsearch-dom';
-import TagsBox from 'instansearch-tagsbox-react';
+import TagsBox from 'instantsearch-tagsbox-react';
 
 export const SelectedTagComponent = ({ hit }) => (
     <Fragment>
@@ -98,8 +98,8 @@ It is possible to encapsulate the `<TagBox />` component in an `<Index />` one i
 | --------------------------------- | --------- | --------------------------------------------------- |
 | selectedTagComponent (required)   | Component | Describe how a selected tag should be displayed.    |
 | suggestedTagComponent (required)  | Component | Describe how a suggested tag should be displayed.   |
-| onUpdate (required)               | Function  | Called each time a tag is added or removed.           |
 | NoResultComponent                 | Component | Describe how an no existing tag should be displayed (should be use with `onAddTag` prop). |
+| onUpdate (required)               | Function  | Called each time a tag is added or removed.           |
 | onAddTag                          | Function  | Called before a tag is added to manipulate the object. It takes either a `hit` (object) or a `value` (string) as parameter and should always return an `object` with a `objectID` value. |
 | translations                      | Object    | Set the `placeholder` and `noResult` translations.  |
 | limitTo                           | Number    | Restrict the number of tags to select.              |

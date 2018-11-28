@@ -54,7 +54,7 @@ class App extends Component {
                           suggestedTagComponent={TagSuggestionComponent}
                           noResultComponent={NoResultComponent}
                           onAddTag={this.onAddTag}
-                          onTagsUpdated={this.onTagsUpdated}
+                          onUpdate={this.onTagsUpdated}
                           translations={{ placeholder: "City, Airport IATA…", noResult: "No airport found." }}
                           limitTo={2}
                       />
