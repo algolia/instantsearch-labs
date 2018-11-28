@@ -29,27 +29,27 @@ class Tags extends React.Component {
 
     addTag = hit => {
         const { tags } = this.state;
-        const { onAddTag, onTagsUpdated } = this.props;
+        const { onAddTag, onUpdate } = this.props;
 
         if (typeof onAddTag === 'function') {
             hit = {...onAddTag(hit)};
         }
 
         this.setState({ tags: [ ...tags,  hit ]}, () => {
-            onTagsUpdated(this.state.tags, tags);
+            onUpdate(this.state.tags, tags);
         });
     };
 
     removeTag = hitObjectID => {
         const { tags } = this.state;
-        const { onTagsUpdated } = this.props;
+        const { onUpdate } = this.props;
 
         const updatedTags = [ ...tags ];
         const indexToRemove = updatedTags.findIndex(tag => tag.objectID === hitObjectID);
         updatedTags.splice(indexToRemove, 1);
 
         this.setState({ tags: updatedTags }, () => {
-            onTagsUpdated(this.state.tags, tags);
+            onUpdate(this.state.tags, tags);
         })
     };
 
@@ -90,7 +90,7 @@ class Tags extends React.Component {
 Tags.propTypes = {
     selectedTagComponent: PropTypes.func.isRequired,
     suggestedTagComponent: PropTypes.func.isRequired,
-    onTagsUpdated: PropTypes.func.isRequired,
+    onUpdate: PropTypes.func.isRequired,
     translations: PropTypes.object,
     limitTo: PropTypes.number
 };
