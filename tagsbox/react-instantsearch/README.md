@@ -1,6 +1,6 @@
 # TagsBox Widget
 
-🎥  **[See it Live on CodeSandbox](https://codesandbox.io/s/zv6r2009l)**
+🎥  **[See it Live on CodeSandbox](https://codesandbox.io/s/vj5zo81ryy)**
 
 ## Demo
 
@@ -90,7 +90,7 @@ It is possible to encapsulate the `<TagBox />` component in an `<Index />` one i
 
 ## Examples
 
-* using the `connectAutoComplete()` connector: [CodeSandbox](https://codesandbox.io/s/zv6r2009l)
+* using the `connectAutoComplete()` connector: [CodeSandbox](https://codesandbox.io/s/vj5zo81ryy)
 
 ### Props
 
