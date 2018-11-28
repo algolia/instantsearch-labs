@@ -10,7 +10,7 @@
     "type": "git",
     "url": "https://github.com/algolia/instantsearch-labs/tree/master/tagsbox/react-instantsearch"
   },
-  "version": "1.2.0",
+  "version": "1.2.1",
   "private": false,
   "dependencies": {
     "react-instantsearch": "^5.3.1",
