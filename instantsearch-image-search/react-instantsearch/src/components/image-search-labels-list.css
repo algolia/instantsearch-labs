@@ -1,0 +1,18 @@
+.ps-labels {
+  padding: 0;
+}
+
+.ps-labels .ps-labels__label {
+  list-style: none;
+  display: inline-block;
+  background-color: #495588;
+  color: white;
+  padding: 2px 8px;
+  margin-right: 8px;
+  border-radius: 4px;
+}
+
+.ps-labels .ps-labels__label a {
+  margin-left: 8px;
+  cursor: pointer;
+}

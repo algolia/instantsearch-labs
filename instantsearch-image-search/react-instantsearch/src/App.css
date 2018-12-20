@@ -1,0 +1,146 @@
+em {
+  background: cyan;
+  font-style: normal;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  min-height: 50px;
+  padding: 0.5rem 1rem;
+  background-image: linear-gradient(to right, #8e43e7, #00aeff);
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.header a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.header-title {
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+
+.header-title::after {
+  content: ' ▸ ';
+  padding: 0 0.5rem;
+}
+
+.header-subtitle {
+  font-size: 1.2rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.search-panel {
+  display: flex;
+}
+
+.search-panel__filters {
+  flex: 1;
+}
+
+.search-panel__results {
+  flex: 3;
+}
+
+.pagination {
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.upload-image-button {
+  padding: .3rem .6rem;
+  display: flex;
+  border: 1px solid #c4c8d8;
+  border-radius: 5px;
+  transition: background-color .2s ease-out;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #0096db;
+}
+
+.upload-image-button input { display: none; }
+
+.error {
+  margin-bottom: 2rem;
+  border: 1px solid rgba(244, 66, 66, 0.4);
+  background-color: rgba(244, 66, 66, 0.1);
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  color: #f44242;
+}
+
+
+/* Author styles */
+
+.ais-Hits-item {
+  width: 100%;
+}
+
+.ais-Hits-item .ais-Hits-item__image-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  max-width: 200px;
+}
+
+.ais-Hits-item .ais-Hits-item__image-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.ais-CurrentRefinements {
+  margin-bottom: 1rem;
+}
+
+.search-panel__results {
+  padding-bottom: 32px;
+}
+
+.ps-tagcontainer {
+  display: flex;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.ps-tag {
+  display: inline-block;
+  background-color: #495588;
+  color: white;
+  font-size: 12px;
+  padding: 2px 4px;
+  margin-right: 4px;
+  border-radius: 4px;
+  margin-top: 8px
+}
+
+@media (min-width: 768px) {
+  .ais-Hits-item {
+    width: calc(50% - 1rem);
+  }
+
+  .ais-Hits-item .ais-Hits-item__image-wrapper {
+    max-width: 150px;
+  }
+}
+
+@media (min-width: 992px) {
+  .ais-Hits-item {
+    width: calc(33% - 1rem);
+  }
+}
+
+@media (min-width: 1200px) {
+  .ais-Hits-item {
+    width: calc(25% - 1rem);
+  }
+}

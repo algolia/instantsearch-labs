@@ -1,0 +1,25 @@
+.ps-searchbox {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ps-searchbox__input {
+  width: 100%;
+}
+
+.ps-searchbox__edit {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ps-searchbox__edit-link {
+  color: #0096db;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-left: 16px;
+}
+
+.ps-searchbox__edit-title {
+  font-weight: bold;
+}

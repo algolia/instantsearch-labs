@@ -1,0 +1,18 @@
+.ps-dropzone {
+  border: 2px #c4c8d8 dashed;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  cursor: pointer;
+  margin-bottom: 16px;
+  color: #3a4570;
+}
+
+.ps-dropzone.ps-dropzone--accepted {
+  background-color: rgba(255, 255, 0, 50);
+}
+
+.ps-dropzone.ps-dropzone--rejected {
+  background-color: red;
+}
