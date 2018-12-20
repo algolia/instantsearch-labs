@@ -1,14 +1,12 @@
 {
-  "name": "client",
+  "name": "image-search-box",
   "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "lint": "eslint .",
-    "lint:fix": "npm run lint -- --fix",
-    "deploy": "netlify deploy -d ./build --prod",
-    "build:deploy": "react-scripts build && netlify deploy -d ./build --prod"
+    "lint:fix": "npm run lint -- --fix"
   },
   "dependencies": {
     "algoliasearch": "3.30.0",
