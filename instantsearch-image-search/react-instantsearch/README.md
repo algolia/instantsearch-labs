@@ -55,7 +55,7 @@ Make sure `InstantSearch` is an ancestor of your component.
 
 ### Requirements
 
-You need to provide the url the app is going to hit for analyzing an uploaded picture. Open the `.env` file and fill in the variable `REACT_APP_API_URL`.
+You need to provide the url the app is going to hit for analyzing an uploaded picture. Copy the `.env` file to `.env.local`and fill in the variable `REACT_APP_API_URL`.
 
 ### Known limitations
 
