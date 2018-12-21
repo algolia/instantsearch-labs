@@ -1,13 +1,20 @@
 {
-  "name": "image-search-box",
+  "name": "instantsearch-image-search-box-react",
   "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "lint": "eslint .",
-    "lint:fix": "npm run lint -- --fix"
+    "lint:fix": "npm run lint -- --fix",
+    "build:module": "rm -rf dist && NODE_ENV=production $(npm bin)/babel src/containers --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__"
   },
+  "main": "dist/image-search-box.js",
+  "module": "dist/image-search-box.js",
+  "files": [
+    "dist/image-search-box.js",
+    "README.md"
+  ],
   "dependencies": {
     "algoliasearch": "3.30.0",
     "react": "16.4.2",
@@ -18,6 +25,7 @@
     "react-spinkit": "^3.0.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "eslint": "5.5.0",
     "eslint-config-algolia": "13.2.3",
     "eslint-config-prettier": "3.0.1",
