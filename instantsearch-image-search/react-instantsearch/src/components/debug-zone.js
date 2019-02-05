@@ -5,7 +5,7 @@ class DebugZone extends Component {
   state = { hidden: true }
 
   handleToggleClick = () => {
-    this.setState({ hidden: !this.state.hidden })
+    this.setState(state => ({ hidden: !state.hidden }))
   }
 
   render() {
