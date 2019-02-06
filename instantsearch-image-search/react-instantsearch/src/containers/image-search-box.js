@@ -29,16 +29,15 @@ const connectImageSearchBox = createConnector({
   },
 
   getSearchParameters(searchParameters, props, searchState) {
-    const [detectedText, detectedLabels] = searchState.imageSearch || [
-      null,
-      [],
-    ];
-
-    return searchParameters
+    const [detectedText, detectedLabels] = searchState.imageSearch || [null, []]
+    const result = searchParameters
+      .addDisjunctiveFacet(props.filter)
       .setQuery(detectedText)
-      .setQueryParameter('facetFilters', [
-        detectedLabels.map(label => [props.filter, label].join(':')),
-      ]);
+
+    return detectedLabels.reduce(
+      (acc, label) => acc.addDisjunctiveFacetRefinement(props.filter, label),
+      result
+    )
   },
 })
 
