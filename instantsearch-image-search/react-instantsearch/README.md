@@ -108,7 +108,7 @@ The refine function updates the `query` property in the `searchState` to keep th
 
 #### getSearchParameters
 
-The prop `text` will be passed as the `query` using `.setQuery` and `tags` will be passed as a query parameter `facetFilters` using `.setQueryParameter`.
+The prop `text` will be passed as the `query` using `.setQuery` and `tags` will be passed disjunctive facets using `.addDisjunctiveFacetRefinement`.
 
 ## Contributing
 
