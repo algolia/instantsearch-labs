@@ -1,23 +1,23 @@
-import React, { Component } from 'react';
-import algoliasearch from 'algoliasearch/lite';
+import React, { Component } from 'react'
+import algoliasearch from 'algoliasearch/lite'
 import {
   InstantSearch,
   Hits,
   Pagination,
   Highlight,
   Configure,
-} from 'react-instantsearch-dom';
-import PropTypes from 'prop-types';
-import './App.css';
-import ImageSearchBox from './containers/image-search-box';
-import ImageSearchLabelsListContainer from './containers/image-search-labels-list';
+} from 'react-instantsearch-dom'
+import PropTypes from 'prop-types'
+import './App.css'
+import ImageSearchBox from './containers/image-search-box'
+import ImageSearchLabelsListContainer from './containers/image-search-labels-list'
 
 const searchClient = algoliasearch(
   'ZU45JNFF1V',
   '59951999c0481ca1623ba6efdb3ad22f'
-);
+)
 
-const INDEX_NAME = 'picture_search_catalog';
+const INDEX_NAME = 'picture_search_catalog'
 
 class App extends Component {
   render() {
@@ -52,7 +52,7 @@ class App extends Component {
           </div>
         </div>
       </div>
-    );
+    )
   }
 }
 
@@ -92,16 +92,16 @@ function Hit({ hit }) {
         )}
       </p>
     </article>
-  );
+  )
 }
 
 Hit.propTypes = {
   hit: PropTypes.object.isRequired,
-};
+}
 
 export default props => (
   <InstantSearch searchClient={searchClient} indexName={INDEX_NAME}>
     <Configure sumOrFiltersScores getRankingInfo />
     <App {...props} />
   </InstantSearch>
-);
+)
