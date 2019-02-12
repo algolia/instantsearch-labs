@@ -37,22 +37,6 @@ The app structure follows the [presentational and container components](https://
 
 You will find the default css files in `src/components` folder. Each CSS file name matches the association component file name.
 
-## Usage
-
-```jsx
-import { InstantSearch } from 'react-instantsearch-dom'
-import ImageSearchBox from 'instantsearch-image-search-box-react'
-
-<InstantSearch appId="..." apiKey="..." indexName="...">
-  <ImageSearchBox
-    filter="_tags"
-  />
-  {/* render hits somewhere... */}
-</InstantSearch>
-```
-
-Make sure `InstantSearch` is an ancestor of your component.
-
 ### Requirements
 
 You need to provide the url the app is going to hit for analyzing an uploaded picture. Copy the `.env` file to `.env.local` and fill in the variable `REACT_APP_API_URL`.
