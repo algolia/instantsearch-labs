@@ -1,0 +1,268 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #f1f1f1;
+  font-family: "Open Sans", sans-serif;
+}
+
+mark {
+  font-weight: bold;
+  font-style: unset;
+  background-color: rgba(216, 216, 216, 0.75);
+  padding: 0.2;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #576cf6;
+  box-shadow: 0px 3px 16px -1px rgba(181, 181, 181, 1);
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+  color: white;
+}
+
+nav h1 {
+  width: 60%;
+  padding-left: 20px;
+  font-weight: 100;
+}
+
+nav ul {
+  width: 40%;
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0 40px;
+}
+
+.left-part {
+  margin-top: 79px;
+  width: 20%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: left;
+  padding: 20px;
+  background-color: #f1f1f1;
+}
+
+.facets h3 {
+  color: #576cf6;
+}
+
+.ais-RefinementList-showMore {
+  background-color: unset;
+  color: black;
+  text-decoration: underline;
+  color: #576cf6;
+}
+
+.ais-RefinementList-showMore:hover,
+.ais-RefinementList-showMore:focus {
+  background-color: unset;
+}
+
+.right-part {
+  margin-top: 79px;
+  width: 80%;
+  padding: 20px;
+}
+
+#hits {
+  margin-top: 20px;
+}
+
+.ais-Hits-item {
+  /* width: calc(33% - 1rem); */
+  background-color: white;
+  padding: 0;
+  position: relative;
+}
+
+.item {
+  padding: 1rem;
+}
+
+.ais-Hits-item .price {
+  width: 100%;
+  color: black;
+  height: 40px;
+  background-color: #dadada;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+}
+
+.item img {
+  width: 80%;
+  height: 200px;
+  object-fit: contain;
+}
+
+.item .add-to-cart {
+  border-radius: 50px;
+  background-color: #576cf6;
+  color: white;
+  text-align: center;
+  width: 70%;
+  padding: 5px;
+  margin-top: -50px;
+  box-shadow: 0px 0px 43px 0px rgba(173, 173, 173, 1);
+  cursor: pointer;
+}
+
+.item .item-content .brand {
+  color: gray;
+  font-size: 13px;
+  margin-bottom: -7px;
+}
+
+.item .item-content .name {
+  margin-bottom: 40px;
+}
+
+#pagination {
+  margin-top: 20px;
+}
+
+.ais-Pagination-item--selected .ais-Pagination-link {
+  background-color: #576cf6;
+  border-color: #4b5684;
+}
+
+.ais-Pagination-link {
+  color: #576cf6;
+}
+
+#algolia-search-input {
+  width: 320px;
+  border-radius: 50px;
+  border: 1px solid white;
+  background-color: #5468ff;
+  color: white;
+}
+
+#algolia-search-input::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1; /* Firefox */
+}
+
+#algolia-search-input:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: white;
+}
+
+#algolia-search-input::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: white;
+}
+
+.bar {
+  background: white;
+}
+
+#algolia-mic {
+  background-color: white;
+  border: 1px solid white;
+  margin-left: -46px;
+  border-radius: 50px;
+  color: #5468ff;
+  font-size: 18px;
+}
+
+/*TABLET*/
+@media screen and (max-width: 1060px) and (min-width: 656px) {
+  .hide-tablet {
+    display: none;
+  }
+
+  nav h1 {
+    width: 35%;
+  }
+
+  nav ul {
+    width: 65%;
+  }
+
+  .ais-Hits-item {
+    width: calc(33.3% - 1rem);
+  }
+}
+
+/*MOBILE*/
+@media screen and (max-width: 656px) {
+  .hide-mobile {
+    display: none;
+  }
+
+  nav {
+    height: 74px;
+  }
+
+  nav h1 {
+    width: 40%;
+  }
+
+  nav ul {
+    width: 60%;
+  }
+
+  #algolia-search-input {
+    width: 190px;
+    height: 33px;
+    padding-left: 10px !important;
+  }
+
+  #algolia-mic {
+    margin-left: -32px;
+    margin-right: 12px;
+    font-size: 15px;
+    width: 33px;
+    height: 33px;
+  }
+
+  .content {
+    padding: 10px;
+  }
+
+  .left-part {
+    display: none;
+  }
+
+  .right-part {
+    width: 100%;
+    padding: 0;
+  }
+
+  #pagination {
+    margin-bottom: 15px;
+  }
+
+  .ais-Hits-item {
+    width: calc(50% - 1rem);
+  }
+
+  #bars {
+    display: none;
+  }
+}

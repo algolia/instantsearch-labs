@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/instantsearch.css@7.1.0/themes/reset-min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/instantsearch.css@7.1.0/themes/algolia-min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="voice-widget/voice-widget.css"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Voice Search Demo</title>
+  </head>
+
+  <body>
+    <nav>
+      <h1>
+        <span class="hide-mobile hide-tablet"
+          >Algolia <i class="fas fa-heart"></i> </span
+        >Voice Search
+      </h1>
+      <ul>
+        <li id="voice-search"></li>
+        <li class="hide-mobile hide-tablet">
+          <i class="fas fa-user"></i><span class="hide-mobile"> Sign In</span>
+        </li>
+        <li class="hide-mobile hide-tablet">
+          <i class="fas fa-cart-arrow-down"></i
+          ><span class="hide-mobile"> Cart</span>
+        </li>
+      </ul>
+    </nav>
+    <div class="content">
+      <div class="left-part">
+        <div class="facets">
+          <div class="brand">
+            <h3>Brands</h3>
+            <div id="brand"></div>
+          </div>
+          <div class="categories">
+            <h3>Categories</h3>
+            <div id="categories"></div>
+          </div>
+          <div class="price">
+            <h3>Price</h3>
+            <div id="price"></div>
+          </div>
+        </div>
+      </div>
+      <div class="right-part">
+        <div id="stats-container"></div>
+        <div id="hits"></div>
+        <div id="pagination"></div>
+      </div>
+    </div>
+  </body>
+
+  <script src="https://cdn.jsdelivr.net/npm/algoliasearch@3.32.0/dist/algoliasearchLite.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@3.0.0/dist/instantsearch.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+  <script src="main.js" type="module"></script>
+</html>
