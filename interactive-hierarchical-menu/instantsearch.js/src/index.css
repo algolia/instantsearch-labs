@@ -1,0 +1,47 @@
+.ihm-category-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ihm-category {
+  margin: 0;
+  padding: 10px 38px 10px 16px;
+  box-sizing: border-box;
+  border: 1px solid #c4c8d8;
+  box-shadow: 0 2px 5px 0 #e3e5ec;
+  box-sizing: border-box;
+  display: block;
+  flex: 0 0 calc(25% - 8px);
+  max-width: 25%;
+  cursor: pointer;
+  margin: 4px;
+}
+
+.ihm-title {
+  background: #333;
+  color: white;
+  padding: 10px 8px;
+  text-align: center;
+  margin-bottom: 4px;
+  justify-content: space-between;
+  min-height: 38px;
+  clear: both;
+}
+
+.ihm-title.ihm-title--centered {
+  text-align: center;
+  display: block;
+}
+
+.ihm-return-button {
+  cursor: pointer;
+  float: left;
+}
+
+.ihm-show-all-trigger {
+  margin-top: 8px;
+  display: block;
+  width: 100%;
+  text-align: right;
+  cursor: pointer;
+}

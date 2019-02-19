@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#000000" />
+    <title>Algolia InstantSearch | Interactive hierarchical menu</title>
+    <!-- or include the full Algolia theme -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/instantsearch.css@7.1.0/themes/algolia-min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="app.css" />
+  </head>
+
+  <body>
+    <div id="container">
+      <div id="breadcrumb"></div>
+      <div id="hits"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/algoliasearch@3.32.0/dist/algoliasearchLite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@3.0.0/dist/instantsearch.production.min.js"></script>
+    <script src="src/index.js"></script>
+    <script>
+      const searchClient = algoliasearch(
+        'latency',
+        '6be0576ff61c053d5f9a3225e2a90f76'
+      )
+
+      const search = instantsearch({
+        indexName: 'instant_search',
+        searchClient,
+        routing: true,
+      })
+
+      search.addWidget(
+        instantsearch.widgets.hits({
+          container: '#hits',
+          templates: {
+            item: hit => `
+              <div class="hit">
+                <div class="hit-image">
+                  <img src="${hit.image}" />
+                </div>
+                <div class="hit-content">
+                  <div>
+                    <div class="hit-name">${
+                      hit._highlightResult.name.value
+                    }</div>
+                    <div class="hit-description">${hit.description}</div>
+                  </div>
+                  <div class="hit-price">$${hit.price}</div>
+                </div>
+              </div>
+              `,
+          },
+        })
+      )
+
+      search.addWidget(
+        new customAlgolia.InteractiveHierarchicalMenuWidget({
+          container: '#breadcrumb',
+          attributes: [
+            'hierarchicalCategories.lvl0',
+            'hierarchicalCategories.lvl1',
+            'hierarchicalCategories.lvl2',
+            'hierarchicalCategories.lvl3',
+          ],
+          showMoreLimit: 8,
+          transformItems: item => {
+            const splittedFacetName = item.split(' > ')
+            return splittedFacetName[splittedFacetName.length - 1]
+          },
+          text: {
+            showMore: 'Show more...',
+            previous: '&nbsp;',
+          },
+        })
+      )
+
+      search.start()
+    </script>
+  </body>
+</html>
