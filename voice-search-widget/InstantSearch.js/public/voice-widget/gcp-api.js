@@ -18,7 +18,7 @@ class GcpAPI {
 
   configureAPI(socket, searchInput, initOptions) {
     socket.on("dataFromGCP", data => {
-      let query = data;
+      const query = data;
       initOptions.helper.setQuery(query).search(); //Set the query and search
       searchInput.value = query;
     });
@@ -51,8 +51,8 @@ class GcpAPI {
   _startRecording(stream, socket) {
     socket.emit("startStream", {});
 
-    let MyAudioCtx = window.AudioContext || window.webkitAudioContext;
-    let audioContext = new MyAudioCtx();
+    const MyAudioCtx = window.AudioContext || window.webkitAudioContext;
+    const audioContext = new MyAudioCtx();
 
     this.myStream = stream;
 
@@ -78,8 +78,8 @@ class GcpAPI {
   }
 
   _streamAudioData(e) {
-    let socket = e.target.socketParam;
-    let that = e.target.contextParam;
+    const socket = e.target.socketParam;
+    const that = e.target.contextParam;
     const float32Samples = e.inputBuffer.getChannelData(0);
 
     socket.emit(

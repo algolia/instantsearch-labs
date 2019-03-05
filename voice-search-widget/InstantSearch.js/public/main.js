@@ -1,6 +1,6 @@
 import VoiceWidget from "./voice-widget/voice-widget.js";
 
-var socket = io.connect("https://voice-search-demo.herokuapp.com/");
+const socket = io.connect("https://voice-search-demo.herokuapp.com/");
 
 socket.on("connect", function() {});
 
@@ -26,8 +26,9 @@ search.addWidget(
                 <div class="centered"><img src="{{image}}" alt=""></div>
                 <div class="centered"><div class="add-to-cart"><i class="fas fa-cart-plus"></i> Add <span class="hide-mobile hide-tablet">to Cart</span></div></div>
                 <div class="item-content">
-                    <p class="brand">{{{_highlightResult.brand.value}}}</p>
-                    <p class="name">{{{_highlightResult.name.value}}}</p>
+                    <p class="brand">{{#helpers.highlight}}{ "attribute": "brand" }{{/helpers.highlight}}</p>
+                    <p class="name">{{#helpers.highlight}}{ "attribute": "name" }{{/helpers.highlight}}</p>
+
                 </div>
             </div>
             <p class="price">Price: {{{price}}}€</p>

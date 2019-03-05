@@ -100,7 +100,7 @@ class VoiceWidget {
     });
 
     searchInput.addEventListener("keyup", function(e) {
-      let value = searchInput.value;
+      const value = searchInput.value;
       initOptions.helper
         .setQueryParameter("optionalWords", value)
         .setQuery(value)
@@ -112,7 +112,7 @@ class VoiceWidget {
     const searchInput = document.getElementById("algolia-search-input");
 
     if (renderOptions.results.userData) {
-      let action = renderOptions.results.userData[0].action;
+      const action = renderOptions.results.userData[0].action;
       if (action == "clear-input") {
         searchInput.value = "";
       }

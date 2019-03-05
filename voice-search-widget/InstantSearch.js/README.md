@@ -8,7 +8,7 @@
 
 ## Description
 
-This is a Voice Search Widget. It is using the Chrome API when running on Chrome but it is using the Google Cloud Platform Speech-To-Text API when running on any other browsers.
+This is a Voice Search Widget. It is using the Chrome API when running on Chrome but it is using the [Google Cloud Platform Speech-to-Text](https://cloud.google.com/speech-to-text/) API when running on any other browsers.
 
 **Table of Contents**
 
@@ -26,15 +26,14 @@ This widget comes with JavaScript but also pre-defined CSS.
 
 ### JavaScript
 
-You can copy and paste the JavaScript code from the repository itself, grab the full voice-widget folder in public/.
+You can copy and paste the JavaScript code from the repository itself, grab the full voice-widget folder in `public/`.
 
 ## Usage
 
 The simplest usage is:
 
 ```js
-
-var socket = io.connect("http://....:port/");
+const socket = io.connect("http://....:port/");
 
 const search = instantsearch({
   indexName: "...",
@@ -56,7 +55,7 @@ search.addWidget(
 
 To use this widget, you need to create an account on GCP to get credentials and then:
 * Base64 encode the credentials (the Javascript Object)
-* Define a new environement variable called SPEECH_GCP_CREDENTIALS with the value of the base64 encoded
+* Define a new environment variable called `SPEECH_GCP_CREDENTIALS` with the value of the base64 encoded
 * You're good to go!
 
 ## Known limitations
@@ -69,7 +68,7 @@ This widget is implemented using a [custom widget](https://www.algolia.com/doc/g
 
 ## Contributing
 
-To contribute to the project, clone this repository, add your credentials to the congif file (based on the credentials-example) and then run:
+To contribute to the project, clone this repository, add your credentials to the config file (based on the [credentials example](config/gcp-credentials-example.json)) and then run:
 
 ```sh
 npm install

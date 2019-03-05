@@ -9,7 +9,7 @@ class ChromeAPI {
     this.recognition.interimResults = true;
 
     this.recognition.onresult = function(event) {
-      let query = event.results[0][0].transcript;
+      const query = event.results[0][0].transcript;
       initOptions.helper.setQuery(query).search(); //Set the query and search
       setTimeout(function(){
         mic.innerHTML = '<i class="fas fa-microphone"></i>';
