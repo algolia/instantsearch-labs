@@ -1,0 +1,79 @@
+#algolia-mic {
+    background-color: #d8d8d8;
+    border: 1px solid #acaa9f;
+    border-radius: 5px;
+    width: 46px;
+    height: 46px;
+    font-size: 15px;
+    margin-left: 10px;
+    outline: none;
+    cursor: pointer;
+    display: block;
+}
+
+#algolia-search-input{
+    padding: 0 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 400px;
+    height: 45px;
+    border: 1px solid gray;
+    outline: none;
+}
+
+.hidden{
+    display: none;
+}
+
+.blink {
+    animation: blink 2s steps(5, start) infinite;
+    -webkit-animation: blink 1s steps(5, start) infinite;
+}
+@keyframes blink {
+    to {
+        visibility: hidden;
+    }
+}
+@-webkit-keyframes blink {
+    to {
+        visibility: hidden;
+    }
+}
+
+#bars {
+    height: 30px;
+    width: 40px;
+    position: relative;
+    left: 50px;
+}
+
+.bar {
+    background: #576CF6;
+    bottom: 1px;
+    height: 3px;
+    position: absolute;
+    width: 3px;      
+    animation: sound 0ms -800ms linear infinite alternate;
+}
+
+@keyframes sound {
+    0% {
+        opacity: .35;
+        height: 3px; 
+    }
+    100% {
+        opacity: 1;       
+        height: 28px;
+    }
+}
+
+.bar:nth-child(1)  { left: 1px; animation-duration: 474ms; }
+.bar:nth-child(2)  { left: 5px; animation-duration: 433ms; }
+.bar:nth-child(3)  { left: 9px; animation-duration: 407ms; }
+.bar:nth-child(4)  { left: 13px; animation-duration: 458ms; }
+.bar:nth-child(5)  { left: 17px; animation-duration: 400ms; }
+.bar:nth-child(6)  { left: 21px; animation-duration: 427ms; }
+.bar:nth-child(7)  { left: 25px; animation-duration: 441ms; }
+.bar:nth-child(8)  { left: 29px; animation-duration: 419ms; }
+.bar:nth-child(9)  { left: 33px; animation-duration: 487ms; }
+.bar:nth-child(10) { left: 37px; animation-duration: 442ms; }​

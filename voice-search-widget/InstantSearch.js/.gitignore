@@ -1,0 +1,4 @@
+/node_modules
+config/gcp-credentials.json
+/.vscode
+**/.DS_Store
