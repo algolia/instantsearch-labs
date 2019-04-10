@@ -1,0 +1,38 @@
+/* ColorRefinementElement style */
+.ais-ColorRefinementElement:hover:before,
+li[status="checked"].ais-ColorRefinementElement:before {
+  visibility: visible;
+}
+
+li.ais-ColorRefinementElement:before {
+  content: "\2714";
+  visibility: hidden;
+  color: #fff;
+  display: inline-block;
+  position: relative;
+  top: -1px;
+  font-size: 10px;
+}
+
+.ais-ColorRefinementElement {
+  float: left;
+  width: 24px;
+  height: 19px;
+  text-align: center;
+  cursor: pointer;
+  margin: 0px 2px 3px 0px;
+  padding-bottom: 0px;
+  box-shadow: inset 0px 0px 0px 1px #d9d9d9;
+}
+
+ul.ais-ColorRefinementList-container {
+  margin: 0;
+}
+
+.ais-ColorRefinementList-container {
+  list-style-type: none;
+  background-color: transparent;
+  border: none;
+  flex-direction: row;
+  padding: 10px;
+}
