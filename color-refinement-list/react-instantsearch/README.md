@@ -65,13 +65,15 @@ import ColorRefinementList from 'instantsearch-color-refinement-list-react';
 
 You should encapsulate the `<ColorRefinementList/>` component inside a `<Panel/>` and in an `<InstantSearch/>` one.
 
-To work properly, **you'll need to specify the record attribute**:
+To work properly, **you'll need to specify the record attribute corresponding to the color**:
 
 ### Props
 
 | Name                              | Type      | Use                                                 |
 | --------------------------------- | --------- | --------------------------------------------------- |
-| attribute (required)              | string    | The name of the attribute                           |
+| attribute (required)              | string    | Name of the attribute that contains the color       |
+
+Please note that the records' color attributes need to be formatted like `#eaeaea;grey` (hexadecimal color and color name separated by a semicolon) for the widget to work.
 
 ## Implementation details
 
