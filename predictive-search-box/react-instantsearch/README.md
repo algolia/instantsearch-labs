@@ -20,9 +20,7 @@ This guide the user in their search to find relevant keywords within the index.
   * [CSS](#css)
 * [Usage](#usage)
   * [Requirements](#requirements)
-* [API](#api)
-  * [relevanceWidget(opts)](#relevancewidgetopts)
-* [Examples](#examples)
+  * [Props](#props)
 * [Implementation details](#implementation-details)
 * [Contributing](#contributing)
 

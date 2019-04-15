@@ -10,7 +10,7 @@
     "type": "git",
     "url": "https://github.com/algolia/instantsearch-labs/tree/master/predictive-search-box/react-instantsearch"
   },
-  "version": "0.1.0",
+  "version": "0.1.2",
   "private": false,
   "dependencies": {
     "react-instantsearch": "^5.3.1",

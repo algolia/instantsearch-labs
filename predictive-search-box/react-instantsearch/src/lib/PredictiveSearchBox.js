@@ -85,6 +85,10 @@ class PredictiveSearchBox extends Component {
         }
     }
 
+    componentDidUpdate() {
+        this.refs.SuggestionTagsContainer.scrollLeft = 0;
+    }
+
     render() {
         return (
             <div className="ais-PredictiveSearchBox">
@@ -133,6 +137,7 @@ class PredictiveSearchBox extends Component {
                     </svg>
                 </button>
                 <ul
+                    ref="SuggestionTagsContainer"
                     class="ais-SuggestionTagsContainer"
                     style={{
                         display: this.state.suggestionTags.length >= 1 ? "flex" : "none",
