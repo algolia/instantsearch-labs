@@ -92,7 +92,7 @@ class PredictiveSearchBox extends Component {
     render() {
         return (
             <div className="ais-PredictiveSearchBox">
-                <div class="ais-PredictiveBox" style={this.state.predictiveBoxStyle}>
+                <div className="ais-PredictiveBox" style={this.state.predictiveBoxStyle}>
                     <span id="predictive-item">{this.state.currentSuggestion}</span>
                 </div>
                 <input
@@ -109,6 +109,8 @@ class PredictiveSearchBox extends Component {
                     onChange={event =>
                         this.refineSuggestionsAndSearch(event.target.value)
                     }
+                    onBlur={() => this.setState({ ...this.state, focus: false })}
+                    onFocus={() => this.setState({ ...this.state, focus: true })}
                     onKeyDown={event => {
                         if (event.keyCode === 9 && this.state.currentSuggestion !== "") {
                             event.preventDefault();
@@ -138,9 +140,9 @@ class PredictiveSearchBox extends Component {
                 </button>
                 <ul
                     ref="SuggestionTagsContainer"
-                    class="ais-SuggestionTagsContainer"
+                    className="ais-SuggestionTagsContainer"
                     style={{
-                        display: this.state.suggestionTags.length >= 1 ? "flex" : "none",
+                        display: (this.state.suggestionTags.length >= 1 && this.state.focus) ? "flex" : "none",
                         overflowX:
                             this.state.suggestionTags.length >= 1 ? "scroll" : "hidden"
                     }}

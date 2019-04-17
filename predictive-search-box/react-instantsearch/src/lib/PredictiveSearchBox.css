@@ -83,7 +83,7 @@ input.ais-PredictiveSearchBox-input:focus {
 }
 
 .ais-SuggestionTagsContainer {
-  width: 100%;
+  width: calc(100% - 10px);
   margin: 0;
   padding-left: 10px;
   display: flex;
