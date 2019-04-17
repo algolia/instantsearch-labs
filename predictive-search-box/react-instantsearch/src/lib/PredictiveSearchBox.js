@@ -11,7 +11,6 @@ class PredictiveSearchBox extends Component {
         const suggestionIndex = client.initIndex(this.props.suggestionsIndex);
         this.state = {
             suggestionIndex,
-            predictiveBoxStyle: { display: "none" },
             currentSuggestion: "",
             suggestionTags: []
         };
@@ -32,7 +31,6 @@ class PredictiveSearchBox extends Component {
 
     computeUpdatedState(searchBoxValue) {
         let newState = {
-            predictiveBoxStyle: { display: "none" },
             currentSuggestion: "",
             suggestionTags: []
         };
@@ -48,7 +46,6 @@ class PredictiveSearchBox extends Component {
                     { query: searchBoxValue },
                     (err, res) => {
                         if (res.hits.length > 0) {
-                            newState.predictiveBoxStyle.display = "flex";
                             if (res.hits[0].query.startsWith(searchBoxValue.toLowerCase())) {
                                 newState.currentSuggestion =
                                     searchBoxValue +
@@ -91,8 +88,15 @@ class PredictiveSearchBox extends Component {
 
     render() {
         return (
-            <div className="ais-PredictiveSearchBox">
-                <div className="ais-PredictiveBox" style={this.state.predictiveBoxStyle}>
+            <div className="ais-PredictiveSearchBox"
+                onMouseEnter={() => this.setState({ ...this.state, hover: true })}
+                onMouseLeave={() => this.setState({ ...this.state, hover: false })}
+            >
+                <div className="ais-PredictiveBox"
+                    style={{
+                        display: (this.state.suggestionTags.length >= 1 && (this.state.focus || this.state.hover))
+                            ? "flex" : "none"
+                    }}>
                     <span id="predictive-item">{this.state.currentSuggestion}</span>
                 </div>
                 <input
@@ -142,7 +146,7 @@ class PredictiveSearchBox extends Component {
                     ref="SuggestionTagsContainer"
                     className="ais-SuggestionTagsContainer"
                     style={{
-                        display: (this.state.suggestionTags.length >= 1 && this.state.focus) ? "flex" : "none",
+                        display: (this.state.suggestionTags.length >= 1 && (this.state.focus || this.state.hover)) ? "flex" : "none",
                         overflowX:
                             this.state.suggestionTags.length >= 1 ? "scroll" : "hidden"
                     }}
@@ -160,7 +164,7 @@ class PredictiveSearchBox extends Component {
                         );
                     })}
                 </ul>
-            </div>
+            </div >
         );
     }
 }
