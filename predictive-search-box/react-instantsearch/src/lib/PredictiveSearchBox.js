@@ -23,7 +23,7 @@ class PredictiveSearchBox extends Component {
     refineSuggestionsAndSearch(value) {
         this.computeUpdatedState(value).then(event => {
             this.setState(
-                { ...this.state, ...event.newState },
+                { ...event.newState },
                 this.props.refine(value)
             );
         });
@@ -89,8 +89,8 @@ class PredictiveSearchBox extends Component {
     render() {
         return (
             <div className="ais-PredictiveSearchBox"
-                onMouseEnter={() => this.setState({ ...this.state, hover: true })}
-                onMouseLeave={() => this.setState({ ...this.state, hover: false })}
+                onMouseEnter={() => this.setState({ hover: true })}
+                onMouseLeave={() => this.setState({ hover: false })}
             >
                 <div className="ais-PredictiveBox"
                     style={{
@@ -113,8 +113,8 @@ class PredictiveSearchBox extends Component {
                     onChange={event =>
                         this.refineSuggestionsAndSearch(event.target.value)
                     }
-                    onBlur={() => this.setState({ ...this.state, focus: false })}
-                    onFocus={() => this.setState({ ...this.state, focus: true })}
+                    onBlur={() => this.setState({ focus: false })}
+                    onFocus={() => this.setState({ focus: true })}
                     onKeyDown={event => {
                         if (event.keyCode === 9 && this.state.currentSuggestion !== "") {
                             event.preventDefault();
