@@ -28,6 +28,7 @@ class App extends Component {
                                 <GroupSizeRefinementList
                                     attribute="size"
                                     patterns={[/^((X?(S|L))|M|XXL|XXXL|[2-5]XL)$/im]}
+                                    showMore={true}
                                 />
                             </Panel>
                         </div>
