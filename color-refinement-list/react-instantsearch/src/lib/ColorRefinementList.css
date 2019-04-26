@@ -6,27 +6,27 @@ li[status="checked"].ais-ColorRefinementElement:before {
 
 li.ais-ColorRefinementElement:before {
   content: "\2714";
-  visibility: hidden;
   color: #fff;
-  display: inline-block;
+  visibility: hidden;  
   position: relative;
-  top: -1px;
   font-size: 10px;
 }
 
 .ais-ColorRefinementElement {
   float: left;
-  width: 24px;
-  height: 19px;
+  width: 30px;
   text-align: center;
   cursor: pointer;
   margin: 0px 2px 3px 0px;
   padding-bottom: 0px;
   box-shadow: inset 0px 0px 0px 1px #d9d9d9;
+  align-items: center;
+  line-height: 20px;
 }
 
 ul.ais-ColorRefinementList-container {
   margin: 0;
+  display: inline-block;
 }
 
 .ais-ColorRefinementList-container {
