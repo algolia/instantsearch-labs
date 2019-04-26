@@ -27,7 +27,7 @@ class App extends Component {
                             <Panel header="Sizes">
                                 <GroupSizeRefinementList
                                     attribute="size"
-                                    patterns={[/^((X?(S|L))|M|XXL|XXXL|[2-5]XL)$/im]}
+                                    patterns={[/^((X?(S|L))|M|XXL|XXXL|[2-5]XL)$/im, /^XXXXL$/im]}
                                     showMore={true}
                                 />
                             </Panel>

@@ -40,6 +40,7 @@ class GroupSizeRefinementList extends Component {
         return (
             <div className="ais-GroupSizeRefinementList">
                 {sizeGroups.slice(0, nbGroups).map((sizeList, index) => (
+                    sizeList.hits.length > 0 &&
                     <ul className="ais-GroupSizeRefinementList-container" key={index}>
                         {sizeList.hits.map(item => (
                             <a
@@ -66,7 +67,7 @@ class GroupSizeRefinementList extends Component {
                         ))}
                     </ul>
                 ))}
-                {selectedSizes !== [] &&
+                {selectedSizes.length > 0 &&
                     <ul className="ais-GroupSizeRefinementList-container">
                         {selectedSizes.map(item => (
                             <a
