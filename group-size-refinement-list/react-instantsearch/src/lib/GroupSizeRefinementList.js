@@ -28,7 +28,7 @@ class GroupSizeRefinementList extends Component {
         }, []);
 
         //Display the group that has the biggest count
-        sizeGroups.sort((first, second) => first.count < second.count ? 1 : -1);
+        sizeGroups.sort((first, second) => first.count < second.count ? 1 : first.hits.length < second.hits.length ? 1 : -1);
 
         //Selected sizes not in main group need to be display if widget is folding
         let selectedSizes = []
@@ -94,7 +94,7 @@ class GroupSizeRefinementList extends Component {
                         ))}
                     </ul>
                 }
-                {this.props.showMore && <button onClick={() => this.setState({ expanded: !this.state.expanded })} className="ais-GroupSizeRefinementList-showMore">{this.state.expanded ? "Show less" : "Show more"}</button>}
+                {this.props.showMore && sizeGroups.length > nbGroups && <button onClick={() => this.setState({ expanded: !this.state.expanded })} className="ais-GroupSizeRefinementList-showMore">{this.state.expanded ? "Show less" : "Show more"}</button>}
             </div>
         );
     }
