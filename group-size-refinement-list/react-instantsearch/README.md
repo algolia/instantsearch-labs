@@ -72,7 +72,7 @@ To work properly, **you'll need to specify the record attribute**:
 | Name                              | Type           | Use                                                 |
 | --------------------------------- | -------------- | --------------------------------------------------- |
 | attribute (required)              | string         | The name of the attribute                           |
-| patterns                          | Array(string)  | The regex patterns for each blocks                  |
+| patterns (required)               | Array(string)  | The regex patterns for each blocks                  |
 
 ## Implementation details
 
