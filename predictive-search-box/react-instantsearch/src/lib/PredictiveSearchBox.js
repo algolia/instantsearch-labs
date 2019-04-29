@@ -45,7 +45,7 @@ class PredictiveSearchBox extends Component {
                 oldState.suggestionIndex.search(
                     { query: searchBoxValue },
                     (err, res) => {
-                        if (res.hits.length > 0) {
+                        if (res && res.hits.length > 0) {
                             if (res.hits[0].query.startsWith(searchBoxValue.toLowerCase())) {
                                 newState.currentSuggestion =
                                     searchBoxValue +
@@ -62,8 +62,11 @@ class PredictiveSearchBox extends Component {
                             // Add tags up to maxSuggestions
                             let addedTags = 0;
                             if (
-                                res.hits.length > 1 ||
-                                (res.hits.length === 1 && res.hits[0].query !== searchBoxValue)
+                                res &&
+                                (
+                                    res.hits.length > 1 ||
+                                    (res.hits.length === 1 && res.hits[0].query !== searchBoxValue)
+                                )
                             ) {
                                 res.hits.forEach(hit => {
                                     if (addedTags === oldProps.maxSuggestions) {
