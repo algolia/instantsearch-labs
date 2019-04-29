@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+
+* {
+  box-sizing: border-box;
+}
+
+#app {
+  width: 500px;
+  margin: 42px;
+}
+
+html {
+  height: 100%;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  min-height: 100%;
+  padding: 24px;
+  font-size: 14px;
+  line-height: 24px;
+  overflow-y: scroll;
+  display: flex;
+  font-family: "Open Sans", sans-serif;
+  background: #f0f2f5;
+  flex-direction: column;
+}
+
+#root {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.ais-InstantSearch__root {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+a {
+  color: #5468ff;
+}
+
+.ais-Highlight-highlighted,
+.ais-Snippet-highlighted {
+  font-style: normal;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.ais-InstantSearch__root {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row-reverse;
+  width: 960px;
+  min-height: 100%;
+  margin: 0 auto;
+}
+
+#brands .ais-SearchBox-input {
+  box-shadow: none;
+  border-bottom: 1px solid #eee;
+  border-radius: 0;
+}
+
+#brands {
+  margin-bottom: 24px;
+}
+
+#brands {
+  margin-right: 24px;
+  padding: 8px 0;
+}
+
+#brands,
+.ais-Hits-item,
+.ais-SearchBox-input {
+  height: auto;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.left-panel {
+  flex: 0 0 290px;
+}
+
+.right-panel {
+  flex: 0 0 650px;
+}
+
+.ais-Panel-header {
+  font-weight: bolder;
+  margin: 0;
+  padding: 0 16px 8px;
+  font-size: inherit;
+  text-transform: uppercase;
+  border-bottom: 1px solid #eee;
+}
+
+.ais-Panel-body {
+  display: flex;
+}
