@@ -69,11 +69,17 @@ To work properly, **you'll need to specify the record attribute**:
 
 ### Props
 
-| Name                              | Type           | Use                                                                          |
-| --------------------------------- | -------------- | ---------------------------------------------------------------------------- |
-| attribute (required)              | string         | The name of the attribute                                                    |
-| patterns (required)               | Array(string)  | The regex patterns for each blocks                                           |
-| nbGroups                          | Number         | The number of group sizes to display by default when showMore is set to true |
+| Name                              | Type           | Use                                                                                                  |
+| --------------------------------- | -------------- | ---------------------------------------------------------------------------------------------------- |
+| attribute (required)              | string         | The name of the attribute                                                                            |
+| patterns (required)               | Array(string)  | The regex patterns for each blocks                                                                   |
+| nbGroups                          | Number         | The number of group sizes to display by default when showMore is set to true                         |
+| sortGroupByNbResults              | Boolean        | Display first results with the most result. If false, it will use the regex order. Default: True     |
+| sortSizesByNbResults              | Boolean        | Display first the sizes with the most hits. If false, see formatting bellow[^footnote] Default: True |
+
+[^footnote]: To sort the sizes manualy, you need to pass a number corresponding to the position of the size in the size group.
+This number has to follow the size label, you should use a ';' as separator.
+Example: XXL;3 - S;1 - M;2 will display S, M and XXL in this order
 
 ## Implementation details
 

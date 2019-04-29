@@ -7,6 +7,8 @@ class GroupSizeRefinementList extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            sortGroupByNbResults: this.props.sortGroupByNbResults ? this.props.sortGroupByNbResults : true,
+            sortSizesByNbResults: this.props.sortSizesByNbResults ? this.props.sortSizesByNbResults : true,
             expanded: !this.props.showMore,
             nbGroups: this.props.nbGroups ? this.props.nbGroups : 1
         };
@@ -18,7 +20,7 @@ class GroupSizeRefinementList extends Component {
         let nbGroups = patterns.length
         let sizeGroups = patterns.reduce((sizeGroups, regex) => {
             const sizeGroup = this.props.items.reduce((prevHit, hit) => {
-                if (regex.test(hit.label) && !inclusionArrays.includes(hit)) {
+                if (regex.test(hit.label.split(';')[0]) && !inclusionArrays.includes(hit)) {
                     return { count: prevHit.count + hit.count, hits: [...prevHit.hits, hit] }
                 }
                 return prevHit
@@ -30,8 +32,16 @@ class GroupSizeRefinementList extends Component {
             return sizeGroups
         }, []);
 
-        //Display the group that has the biggest count
-        sizeGroups.sort((first, second) => first.count < second.count ? 1 : first.hits.length < second.hits.length ? 1 : -1);
+        //Display the group that has the biggest count on top or number of choices if tie
+        if (this.state.sortGroupByNbResults)
+            sizeGroups.sort((first, second) => first.count < second.count ? 1 : first.hits.length < second.hits.length ? 1 : -1);
+
+        if (!this.state.sortSizesByNbResults)
+            sizeGroups.map(sizeGroup => sizeGroup.hits.sort(
+                (first, second) =>
+                    parseInt(first.label.split(';')[1], 10) === parseInt(second.label.split(';')[1], 10) ?
+                        (first.count < second.count ? 1 : -1) : parseInt(first.label.split(';')[1], 10) - parseInt(second.label.split(';')[1], 10)
+            ))
 
         //Compute selected sizes that are not in the nbGroups first group to still display them when showMore is set to true
         let selectedSizes = []
@@ -56,7 +66,7 @@ class GroupSizeRefinementList extends Component {
                                     event.preventDefault();
                                     this.props.refine(item.value);
                                 }}
-                                key={item.label}
+                                key={item.label.split(';')[0]}
                             >
                                 <li
                                     className="ais-GroupSizeRefinementElement"
@@ -64,7 +74,7 @@ class GroupSizeRefinementList extends Component {
                                     {this.props.isFromSearch ? (
                                         <Highlight attribute="label" hit={item} />
                                     ) : (
-                                            item.label
+                                            item.label.split(';')[0]
                                         )}
                                     <span className="ais-GroupSizeRefinementCount">{item.count}</span>
                                 </li>
