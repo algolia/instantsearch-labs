@@ -20,10 +20,10 @@ class ColorRefinementList extends Component {
                     ) : null}
                     {this.props.items.map(item => {
                         const color =
-                            item.label.split(";")[0].length === 4
-                                ? item.label.split(";")[0] +
-                                item.label.split(";")[0].slice(1, 4)
-                                : item.label.split(";")[0];
+                            item.label.split(";")[1].length === 4
+                                ? item.label.split(";")[1] +
+                                item.label.split(";")[1].slice(1, 4)
+                                : item.label.split(";")[1];
 
                         return (
                             <a

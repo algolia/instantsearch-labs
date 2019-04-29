@@ -10,7 +10,7 @@
 
 This is the `ColorRefinementList` Labs widget for [React InstantSearch](https://community.algolia.com/react-instantsearch/). You can use this widget to refine results by color tags with Algolia.
 
-This widget displays the colors of the formated facet. The facet value should have a hex code and a title separated by a ';' (Eg. `#000;black`)
+This widget displays the colors of the formated facet. The facet value should have a title and hex code separated by a ';' (Eg. `black;#000`)
 
 This helps the user quickly visualise the kind of color that you have in your index.
 This is a great widget to refine records within multiple shades of a single color (like choosing the color of a jean).
@@ -73,7 +73,7 @@ To work properly, **you'll need to specify the record attribute corresponding to
 | --------------------------------- | --------- | --------------------------------------------------- |
 | attribute (required)              | string    | Name of the attribute that contains the color       |
 
-Please note that the records' color attributes need to be formatted like `#eaeaea;grey` (hexadecimal color and color name separated by a semicolon) for the widget to work.
+Please note that the records' color attributes need to be formatted like `grey;#eaeaea` (color name and hexadecimal color separated by a semicolon) for the widget to work.
 
 ## Implementation details
 
