@@ -69,10 +69,11 @@ To work properly, **you'll need to specify the record attribute**:
 
 ### Props
 
-| Name                              | Type           | Use                                                 |
-| --------------------------------- | -------------- | --------------------------------------------------- |
-| attribute (required)              | string         | The name of the attribute                           |
-| patterns (required)               | Array(string)  | The regex patterns for each blocks                  |
+| Name                              | Type           | Use                                                                          |
+| --------------------------------- | -------------- | ---------------------------------------------------------------------------- |
+| attribute (required)              | string         | The name of the attribute                                                    |
+| patterns (required)               | Array(string)  | The regex patterns for each blocks                                           |
+| nbGroups                          | Number         | The number of group sizes to display by default when showMore is set to true |
 
 ## Implementation details
 

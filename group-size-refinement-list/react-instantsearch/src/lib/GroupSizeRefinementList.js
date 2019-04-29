@@ -23,24 +23,30 @@ class GroupSizeRefinementList extends Component {
                 }
                 return prevHit
             }, { count: 0, hits: [] });
-            inclusionArrays.push(...sizeGroup.hits)
-            return [...sizeGroups, sizeGroup]
+            if (sizeGroup.count > 0) {
+                inclusionArrays.push(...sizeGroup.hits)
+                return [...sizeGroups, sizeGroup]
+            }
+            return sizeGroups
         }, []);
 
         //Display the group that has the biggest count
         sizeGroups.sort((first, second) => first.count < second.count ? 1 : first.hits.length < second.hits.length ? 1 : -1);
 
-        //Selected sizes not in main group need to be display if widget is folding
+        //Compute selected sizes that are not in the nbGroups first group to still display them when showMore is set to true
         let selectedSizes = []
         if (!this.state.expanded) {
             nbGroups = this.state.nbGroups
-            selectedSizes = this.props.items.filter(hit => !sizeGroups[0].hits.includes(hit) && hit.isRefined)
+            selectedSizes = this.props.items.filter(
+                hit => hit.isRefined &&
+                    sizeGroups.reduce((includes, sizeGroup, i) => includes || (sizeGroup.hits.includes(hit) && i >= nbGroups), false)
+            )
         }
 
+        console.log(sizeGroups.length, this.state.nbGroups)
         return (
             <div className="ais-GroupSizeRefinementList">
                 {sizeGroups.slice(0, nbGroups).map((sizeList, index) => (
-                    sizeList.hits.length > 0 &&
                     <ul className="ais-GroupSizeRefinementList-container" key={index}>
                         {sizeList.hits.map(item => (
                             <a

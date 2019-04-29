@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import {
     InstantSearch,
     Panel,
+    SearchBox,
     Hits,
 } from "react-instantsearch-dom";
 
@@ -18,6 +19,8 @@ class App extends Component {
             >
                 <main className="search-container">
                     <div className="right-panel">
+                        <SearchBox
+                        />
                         <div id="hits">
                             <Hits />
                         </div>
@@ -27,8 +30,9 @@ class App extends Component {
                             <Panel header="Sizes">
                                 <GroupSizeRefinementList
                                     attribute="size"
-                                    patterns={[/^((X?(S|L))|M|XXL|XXXL|[2-5]XL)$/im, /^XXXXL$/im]}
+                                    patterns={[/^((X?(S|L))|M)$/im, /^XXXXL$/im, /^(XXL|XXXL|[2-5]XL)$/im]}
                                     showMore={true}
+                                    nbGroups={2}
                                 />
                             </Panel>
                         </div>
