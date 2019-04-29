@@ -43,7 +43,6 @@ class GroupSizeRefinementList extends Component {
             )
         }
 
-        console.log(sizeGroups.length, this.state.nbGroups)
         return (
             <div className="ais-GroupSizeRefinementList">
                 {sizeGroups.slice(0, nbGroups).map((sizeList, index) => (
