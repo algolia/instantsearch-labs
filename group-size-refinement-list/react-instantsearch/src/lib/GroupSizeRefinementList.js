@@ -94,7 +94,7 @@ class GroupSizeRefinementList extends Component {
                         ))}
                     </ul>
                 }
-                {this.props.showMore && sizeGroups.length > nbGroups && <button onClick={() => this.setState({ expanded: !this.state.expanded })} className="ais-GroupSizeRefinementList-showMore">{this.state.expanded ? "Show less" : "Show more"}</button>}
+                {this.props.showMore && sizeGroups.length > this.state.nbGroups && <button onClick={() => this.setState({ expanded: !this.state.expanded })} className="ais-GroupSizeRefinementList-showMore">{this.state.expanded ? "Show less" : "Show more"}</button>}
             </div>
         );
     }
