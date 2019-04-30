@@ -7,10 +7,10 @@ class GroupSizeRefinementList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            sortGroupByNbResults: this.props.sortGroupByNbResults !== undefined ? this.props.sortGroupByNbResults : true,
-            sortSizesByNbResults: this.props.sortSizesByNbResults !== undefined ? this.props.sortSizesByNbResults : true,
-            expanded: !this.props.showMore,
-            nbGroups: this.props.nbGroups ? this.props.nbGroups : 1
+            sortGroupByNbResults: props.sortGroupByNbResults !== undefined ? props.sortGroupByNbResults : true,
+            sortSizesByNbResults: props.sortSizesByNbResults !== undefined ? props.sortSizesByNbResults : true,
+            expanded: !props.showMore,
+            nbGroups: props.nbGroups ? props.nbGroups : 1
         };
     }
 
