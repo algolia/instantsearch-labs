@@ -18,7 +18,7 @@ class GroupSizeRefinementList extends Component {
         let inclusionArrays = [];
         const patterns = [...this.props.patterns, /.*/im]
         let nbGroups = patterns.length
-        let sizeGroups = patterns.reduce((sizeGroups, regex) => {
+        let sizeGroups = patterns.reduce((acc, regex) => {
             const sizeGroup = this.props.items.reduce((prevHit, hit) => {
                 if (regex.test(hit.label.split(';')[0]) && !inclusionArrays.includes(hit)) {
                     return { count: prevHit.count + hit.count, hits: [...prevHit.hits, hit] }
@@ -27,14 +27,17 @@ class GroupSizeRefinementList extends Component {
             }, { count: 0, hits: [] });
             if (sizeGroup.count > 0) {
                 inclusionArrays.push(...sizeGroup.hits)
-                return [...sizeGroups, sizeGroup]
+                return [...acc, sizeGroup]
             }
-            return sizeGroups
+            return acc
         }, []);
 
         //Display the group that has the biggest count on top or number of choices if tie
         if (this.state.sortGroupByNbResults)
-            sizeGroups.sort((first, second) => first.count < second.count ? 1 : first.hits.length < second.hits.length ? 1 : -1);
+            sizeGroups.sort(
+                (first, second) =>
+                    first.count < second.count ? 1 : second.hits.length - first.hits.length
+            );
 
         if (!this.state.sortSizesByNbResults)
             sizeGroups.map(sizeGroup => sizeGroup.hits.sort(
