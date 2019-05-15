@@ -20,37 +20,42 @@ class RheostatRangeSlider extends Component {
 
     componentWillReceiveProps = sliderState => {
         if (sliderState.canRefine) {
-            if (sliderState.currentRefinement.min > sliderState.currentRefinement.max)
-                sliderState.currentRefinement.min = sliderState.currentRefinement.max - 1
+            const { min, max } = sliderState.currentRefinement
             this.setState({
                 currentValues: {
-                    min: sliderState.currentRefinement.min,
-                    max: sliderState.currentRefinement.max
+                    min: min,
+                    max: max
                 }
             });
         }
     }
 
     onValuesUpdated = sliderState => {
+        const { min, max } = this.props;
         this.setState({
             currentValues: {
-                min: Math.max(sliderState.values[0], this.props.min),
-                max: Math.min(sliderState.values[1], this.props.max)
+                min: Math.min(Math.max(sliderState.values[0], min), max),
+                max: Math.max(Math.min(sliderState.values[1], max), min)
             }
         });
     };
 
     onChange = sliderState => {
-        if (sliderState.values[0] > sliderState.values[1])
-            sliderState.values.reverse()
-
+        const { min, max } = this.props;
         if (
-            this.props.currentRefinement.min !== Math.max(sliderState.values[0], this.props.min) ||
-            this.props.currentRefinement.max !== Math.min(sliderState.values[1], this.props.max)
+            this.props.currentRefinement.min !== sliderState.values[0] ||
+            this.props.currentRefinement.max !== sliderState.values[1]
         ) {
+            let computedMin = Math.min(Math.max(sliderState.values[0], min), max)
+            let computedMax = Math.max(Math.min(sliderState.values[1], max), min)
+            if (computedMin === computedMax && computedMin > min)
+                computedMin -= 1
+            else if (computedMin === computedMax && computedMax < max)
+                computedMax += 1
+
             this.props.refine({
-                min: sliderState.values[0],
-                max: sliderState.values[1]
+                min: computedMin,
+                max: computedMax
             });
         }
     };
