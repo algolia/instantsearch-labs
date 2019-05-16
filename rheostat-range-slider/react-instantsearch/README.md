@@ -4,7 +4,7 @@
 
 ## Demo
 
-![Demo of RheostatRangeSlider Widget](https://d2ddoduugvun08.cloudfront.net/items/2z0c0q1H2z3w021L3Q38Screen%20Recording%202019-04-29%20at%2011.29%20AM.gif)
+![Demo of RheostatRangeSlider Widget](https://cl.ly/5e4eec94714c/Screen%20Recording%202019-05-16%20at%2004.43%20PM.gif)
 
 ## Description
 
