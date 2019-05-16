@@ -113,6 +113,7 @@ class PredictiveSearchBox extends Component {
                     maxLength="512"
                     className="ais-PredictiveSearchBox-input"
                     value={this.props.currentRefinement}
+                    autoFocus={this.props.autoFocus ? true : false}
                     onChange={event =>
                         this.refineSuggestionsAndSearch(event.target.value)
                     }

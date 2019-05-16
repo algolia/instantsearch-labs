@@ -61,6 +61,7 @@ class App extends Component {
                                 apiKey="6a187532e8e703464da52c20555c37cf"
                                 placeholder="Search for products and brands"
                                 maxSuggestions={30}
+                                autoFocus={true}
                             />
                         </div>
                         <div id="pagination">
