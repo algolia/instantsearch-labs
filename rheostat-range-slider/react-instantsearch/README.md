@@ -10,7 +10,7 @@
 
 This is the `RheostatRangeSlider` Labs widget for [React InstantSearch](https://community.algolia.com/react-instantsearch/). You can use this widget to refine results using numerical range with Algolia.
 
-This helps the user quickly quickly refine results using a numerical range.
+This helps the user quickly refine results using a numerical range.
 This is a great widget to refine by price, number of person...
 
 **Table of Contents**
