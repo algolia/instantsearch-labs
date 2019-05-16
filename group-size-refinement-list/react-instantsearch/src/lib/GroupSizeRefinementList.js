@@ -36,7 +36,8 @@ class GroupSizeRefinementList extends Component {
         if (this.state.sortGroupByNbResults)
             sizeGroups.sort(
                 (first, second) =>
-                    first.count < second.count ? 1 : second.hits.length - first.hits.length
+                    first.hits.length / first.count > second.hits.length / second.count ? 1 :
+                        first.hits.length / first.count < second.hits.length / second.count ? -1 : second.hits.length - first.hits.length
             );
 
         if (!this.state.sortSizesByNbResults)
