@@ -27,6 +27,7 @@ li.ais-ColorRefinementElement:before {
 ul.ais-ColorRefinementList-container {
   margin: 0;
   display: inline-block;
+  width: 100%;
 }
 
 .ais-ColorRefinementList-container {

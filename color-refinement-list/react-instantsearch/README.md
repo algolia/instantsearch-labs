@@ -72,6 +72,9 @@ To work properly, **you'll need to specify the record attribute corresponding to
 | Name                              | Type      | Use                                                 |
 | --------------------------------- | --------- | --------------------------------------------------- |
 | attribute (required)              | string    | Name of the attribute that contains the color       |
+| limit                             | number    | Number of colors to display                         |
+| showMore                          | boolean   | Display show more button                            |
+
 
 Please note that the records' color attributes need to be formatted like `grey;#eaeaea` (color name and hexadecimal color separated by a semicolon) for the widget to work.
 

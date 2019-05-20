@@ -4,7 +4,26 @@ import { connectRefinementList } from "react-instantsearch-dom";
 import './ColorRefinementList.css';
 
 class ColorRefinementList extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            expanded: !props.showMore,
+            limit: props.limit || 10
+        };
+    }
+
     render() {
+        let { items } = this.props;
+        const { expanded, limit } = this.state
+
+        if (!expanded) {
+            let filtered = items.filter((hit) => hit.isRefined)
+            if (filtered.length > limit)
+                items = filtered
+            else
+                items = items.slice(0, limit)
+        }
+
         return (
             <div className="ais-ColorRefinementList">
                 <ul className="ais-ColorRefinementList-container">
@@ -18,7 +37,7 @@ class ColorRefinementList extends Component {
                             />
                         </li>
                     ) : null}
-                    {this.props.items.map(item => {
+                    {items.map(item => {
                         const color =
                             item.label.split(";")[1].length === 4
                                 ? item.label.split(";")[1] +
@@ -45,6 +64,12 @@ class ColorRefinementList extends Component {
                         );
                     })}
                 </ul>
+                {this.props.showMore &&
+                    <button onClick={() => this.setState({ expanded: !this.state.expanded })}
+                        className="ais-ColorRefinementList-showMore">
+                        {this.state.expanded ? "Show less" : "Show more"}
+                    </button>
+                }
             </div>
         );
     }

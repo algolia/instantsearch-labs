@@ -28,6 +28,7 @@ class App extends Component {
                                 <ColorRefinementList
                                     attribute="color"
                                     showMore={true}
+                                    limit={5}
                                     searchable={true}
                                     translations={{ placeholder: "Search for other..." }}
                                 />
