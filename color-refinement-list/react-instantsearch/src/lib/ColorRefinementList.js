@@ -64,8 +64,8 @@ class ColorRefinementList extends Component {
                         );
                     })}
                 </ul>
-                {this.props.showMore &&
-                    <button onClick={() => this.setState({ expanded: !this.state.expanded })}
+                {this.props.showMore && this.props.items.length > limit &&
+                    < button onClick={() => this.setState({ expanded: !this.state.expanded })}
                         className="ais-ColorRefinementList-showMore">
                         {this.state.expanded ? "Show less" : "Show more"}
                     </button>

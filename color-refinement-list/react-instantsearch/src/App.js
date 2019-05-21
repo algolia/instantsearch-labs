@@ -3,6 +3,7 @@ import {
     InstantSearch,
     Panel,
     Hits,
+    SearchBox,
 } from "react-instantsearch-dom";
 
 import "./app.css";
@@ -18,6 +19,7 @@ class App extends Component {
             >
                 <main className="search-container">
                     <div className="right-panel">
+                        <SearchBox></SearchBox>
                         <div id="hits">
                             <Hits />
                         </div>
