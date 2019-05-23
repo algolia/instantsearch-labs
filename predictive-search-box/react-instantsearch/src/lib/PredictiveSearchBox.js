@@ -36,7 +36,7 @@ class PredictiveSearchBox extends Component {
         };
         const oldState = this.state;
         const oldProps = this.props;
-        if (searchBoxValue === "") {
+        if (searchBoxValue === "" || oldProps.maxSuggestions === 0) {
             return new Promise(function (resolve, reject) {
                 resolve({ value: "", newState });
             });
@@ -58,7 +58,7 @@ class PredictiveSearchBox extends Component {
                         }
 
                         // Update suggestionTags
-                        if (oldProps.maxSuggestions || oldProps.maxSuggestions === 0) {
+                        if (oldProps.maxSuggestions) {
                             // Add tags up to maxSuggestions
                             let addedTags = 0;
                             if (
@@ -68,14 +68,15 @@ class PredictiveSearchBox extends Component {
                                     (res.hits.length === 1 && res.hits[0].query !== searchBoxValue)
                                 )
                             ) {
-                                res.hits.forEach(hit => {
+                                newState.suggestionTags = res.hits.reduce((acc, hit) => {
                                     if (addedTags === oldProps.maxSuggestions) {
-                                        return;
+                                        return acc;
                                     }
                                     if (searchBoxValue.toLowerCase() !== hit.query.toLowerCase())
-                                        newState.suggestionTags.push(hit);
+                                        acc.push(hit);
                                     addedTags++;
-                                });
+                                    return acc;
+                                }, [])
                             }
                         }
                         resolve({ value: searchBoxValue, newState });
