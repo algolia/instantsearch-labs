@@ -33,6 +33,7 @@ class App extends Component {
                                     patterns={[/^(S|1A)$/im, /^XXXXL$/im, /^(X?(S|L)|L|XXL)$/im]}
                                     showMore={true}
                                     nbGroups={2}
+                                    translations={{}}
                                 />
                             </Panel>
                         </div>

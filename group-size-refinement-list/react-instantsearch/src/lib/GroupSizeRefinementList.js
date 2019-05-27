@@ -15,6 +15,8 @@ class GroupSizeRefinementList extends Component {
     }
 
     render() {
+        const { translations } = this.props;
+
         let inclusionArrays = [];
         const patterns = [...this.props.patterns, /.*/im]
         let nbGroups = patterns.length
@@ -113,7 +115,12 @@ class GroupSizeRefinementList extends Component {
                         ))}
                     </ul>
                 }
-                {this.props.showMore && sizeGroups.length > this.state.nbGroups && <button onClick={() => this.setState({ expanded: !this.state.expanded })} className="ais-GroupSizeRefinementList-showMore">{this.state.expanded ? "Show less" : "Show more"}</button>}
+                {this.props.showMore && sizeGroups.length > this.state.nbGroups &&
+                    <button onClick={() => this.setState({ expanded: !this.state.expanded })} className="ais-GroupSizeRefinementList-showMore">
+                        {this.state.expanded ?
+                            (translations && translations.showLess ? translations.showLess : "Show less") :
+                            (translations && translations.showMore ? translations.showMore : "Show more")}
+                    </button>}
             </div>
         );
     }
