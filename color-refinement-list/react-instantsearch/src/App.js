@@ -31,8 +31,11 @@ class App extends Component {
                                     attribute="color"
                                     showMore={true}
                                     limit={10}
+                                    translations={{
+                                        showLess: "to",
+                                        placeholder: "Search for other..."
+                                    }}
                                     searchable={true}
-                                    translations={{ placeholder: "Search for other..." }}
                                 />
                             </Panel>
                         </div>

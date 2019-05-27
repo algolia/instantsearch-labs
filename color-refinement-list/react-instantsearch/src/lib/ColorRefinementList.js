@@ -59,7 +59,7 @@ class ColorRefinementList extends Component {
     };
 
     render() {
-        let { items } = this.props;
+        let { items, translations } = this.props;
         const { expanded, limit, sortByColor } = this.state
 
         if (!expanded) {
@@ -96,6 +96,7 @@ class ColorRefinementList extends Component {
                                 onChange={event =>
                                     this.props.searchForItems(event.currentTarget.value)
                                 }
+                                placeholder={translations && translations.placeholder ? translations.placeholder : "Search for facets..."}
                             />
                         </li>
                     ) : null}
@@ -123,7 +124,9 @@ class ColorRefinementList extends Component {
                 {this.props.showMore && this.props.items.length > limit &&
                     < button onClick={() => this.setState({ expanded: !this.state.expanded })}
                         className="ais-ColorRefinementList-showMore">
-                        {this.state.expanded ? "Show less" : "Show more"}
+                        {this.state.expanded ?
+                            (translations && translations.showLess ? translations.showLess : "Show less") :
+                            (translations && translations.showMore ? translations.showMore : "Show more")}
                     </button>
                 }
             </div>
