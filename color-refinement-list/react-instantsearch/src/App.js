@@ -15,7 +15,7 @@ class App extends Component {
             <InstantSearch
                 appId="E8KS2J9PMC"
                 apiKey="9a2480ff719c1092d2ef9ad3c6d36cf1"
-                indexName="colors"
+                indexName="ASOS"
             >
                 <main className="search-container">
                     <div className="right-panel">
@@ -30,7 +30,7 @@ class App extends Component {
                                 <ColorRefinementList
                                     attribute="color"
                                     showMore={true}
-                                    limit={5}
+                                    limit={10}
                                     searchable={true}
                                     translations={{ placeholder: "Search for other..." }}
                                 />
