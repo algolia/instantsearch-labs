@@ -6,6 +6,10 @@ import "./GroupSizeRefinementList.css";
 class GroupSizeRefinementList extends Component {
     constructor(props) {
         super(props);
+        this.props.translations.showMore = this.props.translations.showMore ?
+            this.props.translations.showMore :
+            (expanded) => expanded ? 'Show less' : 'Show more';
+
         this.state = {
             sortGroupByNbResults: props.sortGroupByNbResults !== undefined ? props.sortGroupByNbResults : true,
             sortSizesByNbResults: props.sortSizesByNbResults !== undefined ? props.sortSizesByNbResults : true,
@@ -16,6 +20,7 @@ class GroupSizeRefinementList extends Component {
 
     render() {
         const { translations } = this.props;
+        const { expanded } = this.state;
 
         let inclusionArrays = [];
         const patterns = [...this.props.patterns, /.*/im]
@@ -51,7 +56,7 @@ class GroupSizeRefinementList extends Component {
 
         //Compute selected sizes that are not in the nbGroups first group to still display them when showMore is set to true
         let selectedSizes = []
-        if (!this.state.expanded) {
+        if (!expanded) {
             nbGroups = this.state.nbGroups
             selectedSizes = this.props.items.filter(
                 hit => hit.isRefined &&
@@ -99,7 +104,7 @@ class GroupSizeRefinementList extends Component {
                                     event.preventDefault();
                                     this.props.refine(item.value);
                                 }}
-                                key={item.label}
+                                key={item.label.split(';')[0]}
                             >
                                 <li
                                     className="ais-GroupSizeRefinementElement"
@@ -107,7 +112,7 @@ class GroupSizeRefinementList extends Component {
                                     {this.props.isFromSearch ? (
                                         <Highlight attribute="label" hit={item} />
                                     ) : (
-                                            item.label
+                                            item.label.split(';')[0]
                                         )}
                                     <span className="ais-GroupSizeRefinementCount">{item.count}</span>
                                 </li>
@@ -116,10 +121,8 @@ class GroupSizeRefinementList extends Component {
                     </ul>
                 }
                 {this.props.showMore && sizeGroups.length > this.state.nbGroups &&
-                    <span onClick={() => this.setState({ expanded: !this.state.expanded })} className="ais-GroupSizeRefinementList-showMore">
-                        {this.state.expanded ?
-                            (translations && translations.showLess ? translations.showLess : "Show less") :
-                            (translations && translations.showMore ? translations.showMore : "Show more")}
+                    <span onClick={() => this.setState({ expanded: !expanded })} className="ais-GroupSizeRefinementList-showMore">
+                        {translations.showMore(expanded)}
                     </span>}
             </div>
         );
