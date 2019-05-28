@@ -116,11 +116,11 @@ class GroupSizeRefinementList extends Component {
                     </ul>
                 }
                 {this.props.showMore && sizeGroups.length > this.state.nbGroups &&
-                    <button onClick={() => this.setState({ expanded: !this.state.expanded })} className="ais-GroupSizeRefinementList-showMore">
+                    <span onClick={() => this.setState({ expanded: !this.state.expanded })} className="ais-GroupSizeRefinementList-showMore">
                         {this.state.expanded ?
                             (translations && translations.showLess ? translations.showLess : "Show less") :
                             (translations && translations.showMore ? translations.showMore : "Show more")}
-                    </button>}
+                    </span>}
             </div>
         );
     }
