@@ -36,8 +36,6 @@ class ColorRefinementList extends Component {
             return acc;
         }, {});
 
-        console.log(colorToCluster)
-
         return distances.reduce((acc, distance) => {
             var color1 = distance[0];
             var color2 = distance[1];
@@ -122,12 +120,12 @@ class ColorRefinementList extends Component {
                     )}
                 </ul>
                 {this.props.showMore && this.props.items.length > limit &&
-                    < button onClick={() => this.setState({ expanded: !this.state.expanded })}
+                    <span onClick={() => this.setState({ expanded: !this.state.expanded })}
                         className="ais-ColorRefinementList-showMore">
                         {this.state.expanded ?
                             (translations && translations.showLess ? translations.showLess : "Show less") :
                             (translations && translations.showMore ? translations.showMore : "Show more")}
-                    </button>
+                    </span>
                 }
             </div>
         );
