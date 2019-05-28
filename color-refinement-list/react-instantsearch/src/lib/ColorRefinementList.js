@@ -53,7 +53,7 @@ class ColorRefinementList extends Component {
             colorToCluster[cluster1[0].label] = cluster1;
             colorToCluster[cluster1[cluster1.length - 1].label] = cluster1;
             return cluster1;
-        });
+        }, []);
     };
 
     render() {

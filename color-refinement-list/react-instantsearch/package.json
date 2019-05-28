@@ -10,7 +10,7 @@
     "type": "git",
     "url": "https://github.com/algolia/instantsearch-labs/tree/master/color-refinement-list/react-instantsearch"
   },
-  "version": "0.2.4",
+  "version": "0.2.5",
   "private": false,
   "dependencies": {
     "react-instantsearch": "^5.3.1",
