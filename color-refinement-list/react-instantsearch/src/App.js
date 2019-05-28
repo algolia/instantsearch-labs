@@ -32,7 +32,7 @@ class App extends Component {
                                     showMore={true}
                                     limit={10}
                                     translations={{
-                                        showLess: "to",
+                                        showMore: (e) => e ? "show less" : "show more",
                                         placeholder: "Search for other..."
                                     }}
                                     searchable={true}
