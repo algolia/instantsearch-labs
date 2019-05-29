@@ -6,11 +6,12 @@ import './ColorRefinementList.css';
 class ColorRefinementList extends Component {
     constructor(props) {
         super(props);
-        this.props.translations.showMore = this.props.translations.showMore ?
+        const showMore = this.props.translations && this.props.translations.showMore ?
             this.props.translations.showMore :
             (expanded) => expanded ? 'Show less' : 'Show more';
 
         this.state = {
+            showMore,
             expanded: !props.showMore,
             limit: props.limit || 10,
             sortByColor: props.sortByColor !== undefined ? props.sortByColor : true
@@ -62,7 +63,7 @@ class ColorRefinementList extends Component {
 
     render() {
         let { items, translations } = this.props;
-        const { expanded, limit, sortByColor } = this.state
+        const { expanded, limit, sortByColor, showMore } = this.state
 
         if (!expanded) {
             let filtered = items.filter((hit) => hit.isRefined)
@@ -126,7 +127,7 @@ class ColorRefinementList extends Component {
                 {this.props.showMore && this.props.items.length > limit &&
                     <span onClick={() => this.setState({ expanded: !this.state.expanded })}
                         className="ais-ColorRefinementList-showMore">
-                        {translations.showMore(this.state.expanded)}
+                        {showMore(this.state.expanded)}
                     </span>
                 }
             </div>
