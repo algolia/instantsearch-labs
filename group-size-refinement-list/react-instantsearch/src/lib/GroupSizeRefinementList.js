@@ -6,11 +6,12 @@ import "./GroupSizeRefinementList.css";
 class GroupSizeRefinementList extends Component {
     constructor(props) {
         super(props);
-        this.props.translations.showMore = this.props.translations.showMore ?
+        const showMore = this.props.translations && this.props.translations.showMore ?
             this.props.translations.showMore :
             (expanded) => expanded ? 'Show less' : 'Show more';
 
         this.state = {
+            showMore,
             sortGroupByNbResults: props.sortGroupByNbResults !== undefined ? props.sortGroupByNbResults : true,
             sortSizesByNbResults: props.sortSizesByNbResults !== undefined ? props.sortSizesByNbResults : true,
             expanded: !props.showMore,
@@ -19,8 +20,7 @@ class GroupSizeRefinementList extends Component {
     }
 
     render() {
-        const { translations } = this.props;
-        const { expanded } = this.state;
+        const { expanded, showMore } = this.state;
 
         let inclusionArrays = [];
         const patterns = [...this.props.patterns, /.*/im]
@@ -122,7 +122,7 @@ class GroupSizeRefinementList extends Component {
                 }
                 {this.props.showMore && sizeGroups.length > this.state.nbGroups &&
                     <span onClick={() => this.setState({ expanded: !expanded })} className="ais-GroupSizeRefinementList-showMore">
-                        {translations.showMore(expanded)}
+                        {showMore(expanded)}
                     </span>}
             </div>
         );
