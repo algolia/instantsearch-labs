@@ -1,0 +1,41 @@
+{
+  "name": "instant-search-demo",
+  "version": "2.0.0",
+  "private": true,
+  "repository": "algolia/instant-search-demo",
+  "author": "Algolia (https://www.algolia.com)",
+  "license": "MIT",
+  "scripts": {
+    "start":
+      "browser-sync start --server . --files 'assets/*.css,**/*.js,**/*.html' --no-open",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "npm run lint"
+  },
+  "renovate": {
+    "extends": [
+      "config:application",
+      "schedule:weekends",
+      ":automergeMinor",
+      ":automergeBranchPush",
+      ":semanticCommits",
+      ":rebaseStalePrs",
+      ":timezone(Europe/Paris)"
+    ]
+  },
+  "homepage": "https://github.com/algolia/instant-search-demo#readme",
+  "devDependencies": {
+    "babel-eslint": "8.0.3",
+    "browser-sync": "2.18.13",
+    "eslint": "4.12.1",
+    "eslint-config-algolia": "13.0.1",
+    "eslint-config-prettier": "2.9.0",
+    "eslint-plugin-import": "2.8.0",
+    "eslint-plugin-prettier": "2.3.1",
+    "prettier": "1.9.1"
+  },
+  "engines": {
+    "node": "^9.2.0",
+    "npm": "^5.5.1"
+  }
+}
