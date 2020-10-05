@@ -13,7 +13,7 @@ This repository respect a structure following this particular convention:
   * Vue InstantSearch
   * Angular InstantSearch
 
-⚠️ **Warning:** You’re not force to add an experimentation for every InstantSearch. If it's a new one, just add the flavor(s) you cover.
+⚠️ **Warning:** You’re not force to add a version for every flavor of InstantSearch. If it's a new one, just add the flavor(s) you cover.
 
 ## Getting Started
 
