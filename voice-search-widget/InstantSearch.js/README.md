@@ -40,7 +40,7 @@ const search = instantsearch({
   searchClient: algoliasearch("...", "..."),
 });
 
-search.addWiget(instantsearch.widgets.hits({ container: '#hits' }));
+search.addWidget(instantsearch.widgets.hits({ container: '#hits' }));
 search.addWidget(
   new VoiceWidget({
     container: "#voice-search",

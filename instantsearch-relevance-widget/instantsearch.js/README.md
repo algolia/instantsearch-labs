@@ -56,8 +56,8 @@ const search = instantsearch({
   indexName: '...',
 });
 
-search.addWiget(instantsearch.widgets.hits({ container: '#hits' }));
-search.addWiget(relevanceWidget());
+search.addWidget(instantsearch.widgets.hits({ container: '#hits' }));
+search.addWidget(relevanceWidget());
 ```
 
 ### Requirements
