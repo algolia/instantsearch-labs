@@ -46,7 +46,7 @@ Install it with `yarn add @algolia/react-instantsearch-widget-color-refinement-l
 
 ```jsx
 import { InstantSearch, Panel } from 'react-instantsearch-dom';
-import ColorRefinementList from 'instantsearch-color-refinement-list-react';
+import { ColorRefinementList } from '@algolia/react-instantsearch-widget-color-refinement-list';
 
 <InstantSearch
     appId="..."
