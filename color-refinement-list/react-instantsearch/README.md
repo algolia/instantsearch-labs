@@ -42,7 +42,7 @@ You can copy and paste the necessary CSS code from the repository itself, grab i
 
 ## Usage
 
-Install it with `yarn add instantsearch-color-refinement-list-react` then, use it as simply as:
+Install it with `yarn add @algolia/react-instantsearch-widget-color-refinement-list` then, use it as simply as:
 
 ```jsx
 import { InstantSearch, Panel } from 'react-instantsearch-dom';
