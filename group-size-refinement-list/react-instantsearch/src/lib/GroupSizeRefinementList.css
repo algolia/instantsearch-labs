@@ -1,0 +1,66 @@
+/* GroupSizeRefinementList style */
+.ais-GroupSizeRefinementList {
+  display: table;
+  width: 100%;
+}
+
+ul.ais-GroupSizeRefinementList-container {
+  margin: 0;
+  padding: 10px;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+}
+
+.ais-GroupSizeRefinementList-container a {
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: center;
+  border: 1px solid #ebebeb;
+  margin: 2px;
+  flex: 1 1 30%;
+  max-width: 30%;
+  color: #505050;
+  font-size: 0.8em;
+  font-weight: 400;
+  line-height: 35px;
+}
+
+.ais-GroupSizeRefinementCount {
+  list-style-type: none;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  top: 40%;
+  left: 0;
+  right: 0;
+  font-size: 0.8em;
+}
+
+.ais-GroupSizeRefinementElement {
+  position: relative;
+    margin-right: auto;
+    bottom: 15%;
+    font-size: 1.1em;
+}
+
+.ais-GroupSizeRefinementList-showMore {
+  background: #eee;
+  cursor: pointer;
+  display: inline;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  padding: 4px 7px;
+  border-radius: 6px;
+  border: 0;
+  margin: 0 10px;
+  font-size: 12px;
+}
+
+a[status="checked"] {
+  background-color: #333;
+  color: #fff !important;
+}
